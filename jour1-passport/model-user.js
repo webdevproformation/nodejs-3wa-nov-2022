@@ -6,7 +6,8 @@ connect( process.env.BDD , {useNewUrlParser : true})
 
 const userSchema = new Schema({
     email : String ,
-    password : String
+    password : String,
+    salt : String
 });
 
 const User = model("users" , userSchema)
