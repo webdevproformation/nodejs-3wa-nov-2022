@@ -4,3 +4,9 @@ passport js => librairie de nodejs qui permet de gérer l'authentification et le
 
 cd jour1-passport
 => npm i mongoose express express-session dotenv connect-mongo passport passport-local
+
+1 créer un serveur express via un fichier index.js 
+2 établir une connexion à une base de données mongodb
+3 mettre en place le middleware express-session pour qu'il enregistre la session dans mongodb 
+
+
