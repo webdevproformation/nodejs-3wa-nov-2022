@@ -1,0 +1,7 @@
+déconnexion rediriger vers la page de connexion ET 
+vider la session 
+
+{"cookie":{"originalMaxAge":3600000,"expires":"2022-11-21T15:42:35.897Z","httpOnly":true,"path":"/"},"passport":{"user":{"_id":"637b8722fc2f02d5a4c3d60b","email":"toutou@yahoo.fr","password":"$2b$10$QVupZAQfDsjxhH7IVGVcgeE4LYIVrdowoY/VkQjFwcLS37dJ9U49G","salt":"$2b$10$QVupZAQfDsjxhH7IVGVcge","__v":0}}}
+
+
+{"cookie":{"originalMaxAge":3600000,"expires":"2022-11-21T15:49:00.620Z","httpOnly":true,"path":"/"}}

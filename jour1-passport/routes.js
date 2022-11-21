@@ -3,6 +3,7 @@ const  { User } = require("./model-user");
 const bcrypt = require("bcrypt");
 const Joi = require("joi");
 const passport = require("passport")
+const authentification = require("./authentification");
 
 const route = Router();
 
@@ -82,12 +83,19 @@ route.post("/connecter" , passport.authenticate('local' ,
     failureRedirect : "/connecter"
 }))
 
-route.get("/admin" , (req, rep) => {
+route.get("/deconnexion" , (req, rep , next) => {
+    req.logout(function(err){ // ajouté par passport
+        if(err) return next(err);
+        rep.redirect("/connecter")
+    });
+})
+
+route.get("/admin" , authentification  ,  (req, rep) => {
     rep.send(
         `<h1>Back Office</h1>
-        <p>bienvenu dans le back office !!!</p>
+         <p>bienvenu dans le back office !!!</p>
+         <p><a href="/deconnexion">deconnexion</a></p>
         `
     )
 })
-
 module.exports = route ;
