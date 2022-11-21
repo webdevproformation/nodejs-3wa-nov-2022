@@ -19,6 +19,10 @@ app.use(session({
     })
 }))
 
+app.use(express.urlencoded({extended : false}));
+
+app.use("/" , require("./routes"))
+
 app.listen(PORT, function(){
     console.log(`connexion express réussie sur le port ${PORT}`)
 })
