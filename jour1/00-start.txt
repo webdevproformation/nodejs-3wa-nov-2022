@@ -48,4 +48,26 @@ npm install express mongoose express-session dotenv connect-mongo
 // https://www.mongodb.com/atlas via le compte créé précédemment 
 // => récupérer l'url de connexion 
 
+// créer la base de données 
+// vérifier le network => 0.0.0.0/0
+// créer un compte pour pouvoir y accéder 
+
+login : 3wa
+password : lhHsGxv7AKXbFUhV
+
+url de connexion
+
+mongodb+srv://<username>:<password>@cluster0.hiwok3o.mongodb.net/?retryWrites=true&w=majority
+
+url de connexion :
+
+mongodb+srv://3wa:lhHsGxv7AKXbFUhV@cluster0.hiwok3o.mongodb.net/?retryWrites=true&w=majority
+
+
+
+Cas pratique 
+=> veuillez établir une connexion à la base de données via Mongoose 
+=> dans le fichier index.js 
+
+
 
