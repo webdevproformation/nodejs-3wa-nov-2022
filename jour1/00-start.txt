@@ -80,4 +80,14 @@ Cas pratique
 - faire en sorte que la session soit stockées dans la base mongodb 
 
 
+- {"cookie":{"originalMaxAge":3600000,"expires":"2022-11-21T10:56:29.044Z","httpOnly":true,"path":"/"},"information":"je viens de faire fonctionner la session dans express"}
+
+- connect.sid=s%3AKPmmqoQ2M9SthW8lAr9QLAx33HLa9-7Z7IDeG%2BMzOJ31HfoFNkDtoxKxgJWB8ry%2FInkonDHkLoE
+-       KPmmqoQ2M9SthW8lAr9QLAx33HLa9-7Z
+
+chaque fois que l'on fait une requête, 
+une propriété dans l'entête du requete "Cookie" envoyée automatiquement et simultanémenet au server
+
+id de la session qui a été créée => lien entre le client (navigateur) et la session (stockée dans le serveur => dans une base de données mongodb )
+
 

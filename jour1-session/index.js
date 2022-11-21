@@ -27,6 +27,7 @@ app.use(session({
 
 
 app.get("/" , (req, rep) => {
+    req.session.information = "message modifié"
     rep.json({ message : "welcome" })
 });
 
@@ -36,9 +37,15 @@ app.get("/:id" , (req, rep) => {
     const data = [
         {id : 1 , titre : "article 1"},
         {id : 2 , titre : "article 1"}
-    ]
+    ];
+    const messageDansSession = req.session.information
     const resultat = data.filter( element => element.id === parseInt(id) )
-    rep.json(resultat);
+    rep.json({
+        resultat,
+        messageDansSession
+    });
+    // partager des informations entre les routes via la session
+    // au niveau du client ( navigateur web )
 });
 
 app.listen( PORT , () => console.log(`le serveur express ecoute sur le port ${PORT}`) );
