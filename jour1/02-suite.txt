@@ -9,3 +9,14 @@ npm i bcrypt
 
 3 hasher le mode de passe de l'utilisation avec le salt puis le stocker en base de données
 
+
+-------------------- 
+
+Cas pratique : couche de sécurité complémentaire :
+
+installer la librairie joi => permet de vérifier si l'objet transmis contient bien
+
+{
+    login : email valid ,
+    password : string de caractère avec au minimum 5 caractères 
+}
