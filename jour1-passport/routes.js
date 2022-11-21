@@ -44,7 +44,8 @@ route.post("/inscrire" , async (req, rep) => {
         const profilUser = {
             email : req.body.email ,
             password : passwordHashed ,
-            salt : salt 
+            salt : salt ,
+            role : "redacteur"
         }
 
         const nouveauProfilUser = new User(profilUser)

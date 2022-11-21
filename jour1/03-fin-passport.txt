@@ -14,3 +14,5 @@ Cas pratique :
  role => role ne peut avoir comme valeur QUE admin / redacteur 
  par défaut lorsque l'on crée l'utilisateur => role redacture 
 
+
+{"cookie":{"originalMaxAge":3600000,"expires":"2022-11-21T16:21:55.600Z","httpOnly":true,"path":"/"},"passport":{"user":{"_id":"637b9783a6009173934559b6","email":"nouveau@yahoo.fr","password":"$2b$10$hSoe0uiF77GJyBXmIrLoQ.wQ5qXmNE1kvODa/ByS.y.X7fiY/21Za","salt":"$2b$10$hSoe0uiF77GJyBXmIrLoQ.","role":"redacteur","__v":0}}}
