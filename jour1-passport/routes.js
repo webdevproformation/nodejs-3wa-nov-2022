@@ -3,7 +3,8 @@ const  { User } = require("./model-user");
 const bcrypt = require("bcrypt");
 const Joi = require("joi");
 const passport = require("passport")
-const authentification = require("./authentification");
+const authentification = require("./middleware/authentification");
+const isAdmin = require("./middleware/isAdmin")
 
 const route = Router();
 
@@ -99,4 +100,13 @@ route.get("/admin" , authentification  ,  (req, rep) => {
         `
     )
 })
+
+
+route.get("/gestion-user", authentification , isAdmin ,  (req, rep) => {
+
+    rep.send(`
+    <h1>page de gestion des utilisateurs</h1>
+    <p><a href="/deconnexion">deconnexion</a></p>
+    `)
+})  
 module.exports = route ;
