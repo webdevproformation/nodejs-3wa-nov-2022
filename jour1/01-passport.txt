@@ -9,4 +9,13 @@ cd jour1-passport
 2 établir une connexion à une base de données mongodb
 3 mettre en place le middleware express-session pour qu'il enregistre la session dans mongodb 
 
+cas pratique :
 
+// créer 4 routes 
+// 1 get inscrire 
+//  formulaire email / password 
+// 2 post pour récupérer les informations transmises par le formulaire
+// get se connecter 
+//  3 formulaire avec email / password 
+
+// 4 admin => la route à protéger 
