@@ -10,7 +10,7 @@ const PORT = 5000 ;
 mongoose.connect( process.env.BDD , {useNewUrlParser : true} )
         .then( () => console.log("connexion reussie à la base de données") )
         .catch((ex) => console.log("erreur lors de la connexion à la bdd" , ex))
-
+app.use(express.urlencoded({extended : false}))
 
 app.use(session({
     secret : "azerty1234!",
@@ -30,6 +30,26 @@ app.get("/" , (req, rep) => {
     req.session.information = "message modifié"
     rep.json({ message : "welcome" })
 });
+
+app.get("/formulaire" , (req, rep) => {
+    const formulaire = `
+    <form method="POST" action="/formulaire">
+        <input type="email"  name="email" placeholder="votre@email.fr">
+        <input type="submit">
+    </form>
+    `;
+    rep.send(formulaire)
+});
+
+app.post("/formulaire" , (req, rep) => {
+    req.session.email = req.body.email ;
+    console.log("j'ai reçu le message")
+    rep.send(`<a href="/inscription">voir l'email</a>`)
+});
+
+app.get("/inscription", (req, rep) => {
+    rep.json( {email : req.session.email} )
+})
 
 app.get("/:id" , (req, rep) => {
     const id = req.params.id ;
