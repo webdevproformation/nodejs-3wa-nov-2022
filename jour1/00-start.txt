@@ -1,0 +1,22 @@
+Malik HARRIZ
+malik.h@webdevpro.net
+
+=> nodejs 
+
+------------------------
+
+support de cours 
+
+url : https://formation.webdevpro.net/nodejs/
+login : nodejs
+password : nodejs
+
+=> passport => outil qui permet de gérer authentification / autorisation pour application générée depuis nodejs 
+
+créer un nouveau projet => jour1-session 
+
+npm init --yes
+
+npm install express mongoose express-session dotenv connect-mongo
+
+
