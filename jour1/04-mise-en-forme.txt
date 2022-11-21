@@ -1,0 +1,9 @@
+Cas pratique : 
+
+1 installer le moteur de template pug 
+2 installer bootstrap 
+
+3 barre de menu 
+    elle contient 2 liens 
+        - créer un profil utilisateur 
+        - connexion 

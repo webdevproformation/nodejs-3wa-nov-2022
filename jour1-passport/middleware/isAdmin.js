@@ -8,6 +8,6 @@ module.exports = function(req, rep, next){
         <p>vous devez être admin pour accéder à cette page</p>
         <p><a href="/admin">admin</a></p>
     `
-    rep.status(401).send(html)
+    rep.status(401).send(html);
 
 }
