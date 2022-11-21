@@ -27,3 +27,7 @@ Cas pratique :
 // pouvez crypter le mot passe avant insertion en base de données 
 // via la librairie bcrypt 
 // npm i bcrypt 
+
+---------------------
+
+bon appétit => 14h00 bon appétit  !!!!

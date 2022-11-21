@@ -1,0 +1,9 @@
+
+Cas pratique :
+
+1 installer le module bcrypt 
+
+2 ajouter une nouvelle propriété dans champ objet user "salt"
+
+3 hasher le mode de passe de l'utilisation avec le salt puis le stocker en base de données
+
