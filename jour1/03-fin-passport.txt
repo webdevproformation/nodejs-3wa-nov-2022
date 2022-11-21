@@ -5,3 +5,12 @@ vider la session
 
 
 {"cookie":{"originalMaxAge":3600000,"expires":"2022-11-21T15:49:00.620Z","httpOnly":true,"path":"/"}}
+
+-----------------
+
+Cas pratique : 
+
+ ajouter une nouvelle propriété pour chaque futur user stocké en base de données 
+ role => role ne peut avoir comme valeur QUE admin / redacteur 
+ par défaut lorsque l'on crée l'utilisateur => role redacture 
+
