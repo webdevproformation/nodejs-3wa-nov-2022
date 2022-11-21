@@ -23,7 +23,6 @@ installer la librairie joi => permet de vérifier si l'objet transmis contient b
     password : string de caractère avec au minimum 5 caractères 
 }
 
-
 --------------------
 
 Cas pratique : 
