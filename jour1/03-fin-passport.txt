@@ -16,3 +16,15 @@ Cas pratique :
 
 
 {"cookie":{"originalMaxAge":3600000,"expires":"2022-11-21T16:21:55.600Z","httpOnly":true,"path":"/"},"passport":{"user":{"_id":"637b9783a6009173934559b6","email":"nouveau@yahoo.fr","password":"$2b$10$hSoe0uiF77GJyBXmIrLoQ.wQ5qXmNE1kvODa/ByS.y.X7fiY/21Za","salt":"$2b$10$hSoe0uiF77GJyBXmIrLoQ.","role":"redacteur","__v":0}}}
+
+------------------
+
+Cas pratique 
+Créer une nouveau route => gérer les profils utilisateurs 
+il faudra être connecté ET être admin 
+
+créer le middleware qui permet de vérifier que l'utisateur est bien admin 
+si c'est ok => redigier vers la page de gestion des profils users 
+si ko => afficher une page lui disant qu'il doit être admin pour accéder à cette page !
+
+
