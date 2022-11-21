@@ -63,11 +63,21 @@ url de connexion :
 
 mongodb+srv://3wa:lhHsGxv7AKXbFUhV@cluster0.hiwok3o.mongodb.net/?retryWrites=true&w=majority
 
-
+----------------
 
 Cas pratique 
 => veuillez établir une connexion à la base de données via Mongoose 
 => dans le fichier index.js 
+
+
+-------
+
+Cas pratique
+- importer le middle express-session 
+
+- mettre en place le middleware afin de pour gérer des sessions lors des requêtes réalisées avec express 
+
+- faire en sorte que la session soit stockées dans la base mongodb 
 
 
 

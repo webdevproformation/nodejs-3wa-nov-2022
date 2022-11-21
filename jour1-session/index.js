@@ -1,7 +1,13 @@
 const express = require("express");
+require("dotenv").config();
+const mongoose = require("mongoose");
 
 const app = express()
 const PORT = 5000 ;
+
+mongoose.connect( process.env.BDD , {useNewUrlParser : true} )
+        .then( () => console.log("connexion reussie à la base de données") )
+        .catch((ex) => console.log("erreur lors de la connexion à la bdd" , ex))
 
 app.get("/" , (req, rep) => {
     rep.json({ message : "welcome" })
