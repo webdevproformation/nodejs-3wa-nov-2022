@@ -1,0 +1,11 @@
+extends layout 
+block body
+    .container 
+        h1 #{titre}
+        <form method="POST" action="/inscrire">
+            <input type="email" name="email" placeholder="votre@email.fr" class="form-control">
+            <br>
+            <input type="password" name="password" placeholder="votre password" class="form-control">
+            <br>
+            input(type="submit" value=`${btn}` class="btn btn-success")
+        </form>

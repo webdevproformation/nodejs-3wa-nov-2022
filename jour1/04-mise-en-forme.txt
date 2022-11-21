@@ -7,3 +7,5 @@ Cas pratique :
     elle contient 2 liens 
         - créer un profil utilisateur 
         - connexion 
+
+npm i pug 

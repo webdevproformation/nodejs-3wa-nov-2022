@@ -6,20 +6,11 @@ const passport = require("passport")
 const authentification = require("./middleware/authentification");
 const isAdmin = require("./middleware/isAdmin")
 
+
 const route = Router();
 
 route.get("/inscrire" , (req, rep) => {
-    const formulaire = `
-        <h1>inscription</h1>
-        <form method="POST" action="/inscrire">
-            <input type="email" name="email" placeholder="votre@email.fr">
-            <br>
-            <input type="password" name="password" placeholder="votre password">
-            <br>
-            <input type="submit" value="créer un nouveau profil">   
-        </form>
-    `;
-    rep.send(formulaire)
+    rep.render("form" , {titre : "créer un nouveau compte" , btn : "new"})
 })
 route.post("/inscrire" , async (req, rep) => {
     const schemaUser = Joi.object({
@@ -60,17 +51,7 @@ route.post("/inscrire" , async (req, rep) => {
 })
 
 route.get("/connecter" , (req, rep) => {
-    const formulaire = `
-        <h1>connexion</h1>
-        <form method="POST" action="/connecter">
-            <input type="email" name="email" placeholder="votre@email.fr">
-            <br>
-            <input type="password" name="password" placeholder="votre password">
-            <br>
-            <input type="submit" value="se connecter">   
-        </form>
-    `;
-    rep.send(formulaire)
+    rep.render("form" , {titre : "accéder au back office" , btn : "login" })
 })
 
 /* route.post("/connecter" , () => {
