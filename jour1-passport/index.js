@@ -2,6 +2,7 @@ const express = require("express");
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
 require("dotenv").config();
+const passport = require("passport")
 const PORT = 5002;
 
 const app = express();
@@ -20,6 +21,12 @@ app.use(session({
 }))
 
 app.use(express.urlencoded({extended : false}));
+
+require("./passpost-config");
+
+app.use(passport.initialize()); // lancer la lib sur les routes
+app.use(passport.session()); // liaison avec la session 
+
 
 app.use("/" , require("./routes"))
 
