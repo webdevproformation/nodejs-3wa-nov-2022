@@ -1,0 +1,6 @@
+passport js => librairie de nodejs qui permet de gérer l'authentification et les autorisations 
+
+=> https://www.passportjs.org/ 
+
+cd jour1-passport
+=> npm i mongoose express express-session dotenv connect-mongo passport passport-local
