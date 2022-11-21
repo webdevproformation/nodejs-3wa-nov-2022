@@ -90,4 +90,18 @@ une propriété dans l'entête du requete "Cookie" envoyée automatiquement et s
 
 id de la session qui a été créée => lien entre le client (navigateur) et la session (stockée dans le serveur => dans une base de données mongodb )
 
+=> ajouter le concept de passport combiner avec session pour mettre en place un système d'authentification autorisation ! 
 
+=> 10h25 bon café @ toute suite !!!!
+
+Cas pratique : 
+Dans l'exemple présent
+1 pouvoir mettre en place  une route /newsletter  qui retourne un formulaire 
+formulaire html avec
+     un seul champ => newsletter 
+     un bouton de soumission 
+
+2 formulaire va être transférer ses informations par POST 
+
+ => récupérer les informations dans un session 
+3 => afficher l'email transmis via une route /inscription
