@@ -40,3 +40,12 @@ npm install express mongoose express-session dotenv connect-mongo
 
 /1 => retourner   {id : 1 , titre : "article 1"},
 /2 => retourner   {id : 2 , titre : "article 2"},
+
+
+---------------
+
+// cas pratique créer une nouvelle base de données sur atlas mongo 
+// https://www.mongodb.com/atlas via le compte créé précédemment 
+// => récupérer l'url de connexion 
+
+
