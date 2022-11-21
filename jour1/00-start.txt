@@ -11,6 +11,12 @@ url : https://formation.webdevpro.net/nodejs/
 login : nodejs
 password : nodejs
 
+------------------------
+
+repository :
+
+https://github.com/webdevproformation/nodejs-3wa-nov-2022
+
 => passport => outil qui permet de gérer authentification / autorisation pour application générée depuis nodejs 
 
 créer un nouveau projet => jour1-session 
@@ -19,4 +25,18 @@ npm init --yes
 
 npm install express mongoose express-session dotenv connect-mongo
 
+=> créer un fichier index.js dans le dossier jour1-session 
 
+=> dans ce fichier mettre en place un serveur express 
+
+=> répondre à deux routes 
+
+/ => retourner { message : "welcome" }
+
+[
+    {id : 1 , titre : "article 1"},
+    {id : 2 , titre : "article 1"}
+]
+
+/1 => retourner   {id : 1 , titre : "article 1"},
+/2 => retourner   {id : 2 , titre : "article 2"},
