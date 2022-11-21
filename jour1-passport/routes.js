@@ -1,7 +1,6 @@
 const {Router} = require("express");
 const  { User } = require("./model-user");
-
-console.log(User);
+const bcrypt = require("bcrypt");
 
 const route = Router();
 
@@ -21,7 +20,16 @@ route.get("/inscrire" , (req, rep) => {
 route.post("/inscrire" , async (req, rep) => {
 
     try{
-        const nouveauProfilUser = new User(req.body)
+        const salt = await bcrypt.genSalt(10); // géréner un salt token qui permet de hashed le mot de passe
+        const passwordHashed = await bcrypt.hash( req.body.password , salt ) ;
+
+        const profilUser = {
+            email : req.body.email ,
+            password : passwordHashed ,
+            salt : salt 
+        }
+
+        const nouveauProfilUser = new User(profilUser)
         const user = await nouveauProfilUser.save()
         console.log(user);
         rep.redirect("/connecter")

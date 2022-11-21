@@ -2,6 +2,8 @@
 Cas pratique :
 
 1 installer le module bcrypt 
+npm i bcrypt
+
 
 2 ajouter une nouvelle propriété dans champ objet user "salt"
 
