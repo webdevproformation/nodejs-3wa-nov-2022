@@ -20,6 +20,8 @@ cas pratique :
 
 // 4 admin => la route à protéger 
 
+---------------------
+
 Cas pratique :
 // insérer les informations saisies dans le formulaire d'inscription et les enregistrer dans la base de données que l'on a créé ! 
 // pouvez crypter le mot passe avant insertion en base de données 
