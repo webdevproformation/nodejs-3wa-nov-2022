@@ -21,14 +21,14 @@ const verif = async (username , password, done   ) => {
 
         // est ce que le mot de passe transmis est valide ??? 
         bcrypt.compare( password , user.password  , function(error, resultat){
-            // si le mot de passe est correcte
+            // si le mot de passe est correct
+            console.log(error , resultat);
             if(!error){
                 return done(null, user) // ok redirection vers le page d'admin
             }else {
                 return done(null , false ); // ko 
             }
         } )
-
     }catch{
         (ex) => console.log(ex)
     }

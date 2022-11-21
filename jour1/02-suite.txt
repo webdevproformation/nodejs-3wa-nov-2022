@@ -29,3 +29,9 @@ Cas pratique :
 dans le processus d'inscription ajouter une dernière vérification 
 vérifier que l'email transmis n'existe pas déjà pour les autres comptes 
 si il existe bloquer le processus de création de profil afficher le message "email déjà utilisé"
+
+
+{"cookie":{"originalMaxAge":3600000,"expires":"2022-11-21T15:23:41.922Z","httpOnly":true,"path":"/"},"passport":{"user":{"_id":"637b8722fc2f02d5a4c3d60b","email":"toutou@yahoo.fr","password":"$2b$10$QVupZAQfDsjxhH7IVGVcgeE4LYIVrdowoY/VkQjFwcLS37dJ9U49G","salt":"$2b$10$QVupZAQfDsjxhH7IVGVcge","__v":0}}}
+
+
+{"cookie":{"originalMaxAge":3600000,"expires":"2022-11-21T15:24:56.841Z","httpOnly":true,"path":"/"},"passport":{"user":{"_id":"637b8722fc2f02d5a4c3d60b","email":"toutou@yahoo.fr","password":"$2b$10$QVupZAQfDsjxhH7IVGVcgeE4LYIVrdowoY/VkQjFwcLS37dJ9U49G","salt":"$2b$10$QVupZAQfDsjxhH7IVGVcge","__v":0}}}
