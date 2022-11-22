@@ -62,5 +62,8 @@ Back office
 /admin/commande  => page dédiée pour gérer (CRUD) les commandes 
 
 
+// cas pratique 
+1 créer la page Accueil
+2 créer la page de gestion du catalogue 
 
 
