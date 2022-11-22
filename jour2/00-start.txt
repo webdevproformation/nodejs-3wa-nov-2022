@@ -89,5 +89,9 @@ cas pratique :
 2 récupérer les données et les insérer dans la base de données 
 
 
+---------------
 
+cas pratique :
+1 Ajouter une vérification AVANT insert dans la base de données => via librairie joi 
+2 afficher la liste des produits => axios qui permet de réaliser des requêtes ajax côté server 
 

@@ -5,7 +5,7 @@ block title
 
 block contenu_back
     h1.mb-3 créer un nouveau produit
-    form
+    form(method="POST" action="/admin/catalogue/new")
         input(type="text" class="form-control mb-3" placeholder="nom produit" name="nom")
         .row.g-3
             .col 
@@ -18,7 +18,7 @@ block contenu_back
                     option(value="0") indisponible 
                     option(value="1") en stock
 
-        textarea(name="description" cols="30" rows="10" class="form-control mb-3" placeholder="description produit") 
+        textarea(name="description" cols="30" rows="10" class="form-control mb-3" placeholder="description produit")
         .d-flex.justify-content-end
             input(type="submit" class="btn btn-outline-success")
 
