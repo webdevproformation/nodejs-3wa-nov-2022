@@ -119,3 +119,11 @@ mettre en place la page single
 lors que l'on clique sur le lien voir le produit 
 créer la page produit ! 
 
+
+------------------
+
+Cas pratique :
+Ajouter la session => express-session
+faire en sorte que la session soit stockée dans la base de données mongoDB 
+lorsque vous cliquez sur le bouton ajouter au panier => ajouter la référence produit et la quantité dans une objet { id : xxxxxx, qte : xxxxx }
+
