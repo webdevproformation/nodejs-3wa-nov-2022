@@ -39,4 +39,28 @@ Back => accessible uniquement aux gestionnaires du site internet
 - liste des utilisateurs => gestionnaires / les clients 
 - liste des commandes réalisées 
 
+-------------------
+
+liste des routes :
+
+/ => Accueil => liste de tous les produits 
+/:id => le produit 
+/panier => la page panier 
+/creer-compte
+/checkout
+        la synthese du panier + le profil user 
+        le moyen de livraison et le moyen de paiement
+/mention-legale
+/contact 
+/login => permettre d'accéder au back office 
+
+
+Back office 
+/admin => page d'accueil 
+/admin/catalogue => page dédiée pour gérer (CRUD) le catalogue 
+/admin/user      => page dédiée pour gérer (CRUD) les profils clients / gestionnaires 
+/admin/commande  => page dédiée pour gérer (CRUD) les commandes 
+
+
+
 
