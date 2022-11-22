@@ -1,5 +1,6 @@
 const {Router} = require("express")
-const { Produit , validationProduit} = require("../models/produits");
+const { Produit , validationProduit } = require("../models/produits");
+const {isValidObjectId} = require("mongoose");
 
 const router = Router();
 
@@ -32,6 +33,15 @@ router.post("/catalogue/new", async (req, rep) => {
     }catch(ex){
         rep.redirect("/page-erreur")
     }
+})
+
+router.delete("/catalogue/:id" , async (req, rep) => {
+    const id = req.params.id ;
+    if( !isValidObjectId(id) ) return rep.status(400).json({message : "id invalid"})
+    const produit = await Produit.findById(id);
+    if(!produit) return rep.status(404).json({message : "produit inconnu"});
+    await Produit.deleteOne(produit);
+    rep.json({message : "delete"});
 })
 
 module.exports = router;

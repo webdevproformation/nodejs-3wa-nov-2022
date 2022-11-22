@@ -1,6 +1,5 @@
 const express = require("express");
 const PORT = 5004
-const path = require("path")
 const { connect } = require("mongoose")
 require("dotenv").config();
 
@@ -11,10 +10,7 @@ connect( process.env.BDD , { useNewUrlParser : false })
 
 const app = express();
 
-app.set("views", path.join(__dirname , "views"))
-app.set("view engine", "pug")
-
-app.use(express.urlencoded({ extended : false}))
+require("./config/pug")(app);
 
 app.use("/" , require("./routes/front"))
 app.use("/admin" , require("./routes/back"))
