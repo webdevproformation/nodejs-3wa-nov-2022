@@ -11,6 +11,8 @@ router.get("/catalogue", (req, rep) => {
     rep.render("back/catalogue/index");
 })
 
-
+router.get("/catalogue/new", (req, rep) => {
+    rep.render("back/catalogue/form");
+})
 
 module.exports = router;

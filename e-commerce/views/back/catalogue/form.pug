@@ -1,0 +1,27 @@
+extends ../index
+
+block title 
+    title créer un nouveau produit
+
+block contenu_back
+    h1.mb-3 créer un nouveau produit
+    form
+        input(type="text" class="form-control mb-3" placeholder="nom produit" name="nom")
+        .row.g-3
+            .col 
+                input(type="text" class="form-control mb-3" placeholder="image" name="image")
+            .col 
+                input(type="number" class="form-control mb-3" placeholder="prix produit" name="prix")
+            .col 
+                select(name="en_stock" class="form-select")
+                    option(value="") selectionner une valeur 
+                    option(value="0") indisponible 
+                    option(value="1") en stock
+
+        textarea(name="description" cols="30" rows="10" class="form-control mb-3" placeholder="description produit") 
+        .d-flex.justify-content-end
+            input(type="submit" class="btn btn-outline-success")
+
+        
+        
+            
