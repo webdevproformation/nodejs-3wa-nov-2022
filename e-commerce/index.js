@@ -11,6 +11,10 @@ connect( process.env.BDD , { useNewUrlParser : false })
 const app = express();
 
 require("./config/pug")(app);
+require("./config/session")(app);
+
+app.use(express.urlencoded({ extended : false}))
+app.use(express.json())
 
 app.use("/" , require("./routes/front"))
 app.use("/admin" , require("./routes/back"))

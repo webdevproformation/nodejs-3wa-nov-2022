@@ -11,11 +11,18 @@ router.get("/", async (req, rep) => {
 
 router.get("/produit/:id", async (req, rep) => {
     const id = req.params.id ;
-
     if(!isValidObjectId(id)) return rep.status(400).json({message : "id invalid"})
     const produit = await Produit.findById(id)
     if(!produit) return rep.status(404).json({message : "aucun produit trouvé"})
     rep.render("front/single" , { produit });
+})
+
+router.post("/add/panier", (req, rep) => {
+    if(!req.session.panier){
+        req.session.panier = []
+    }
+    req.session.panier.push(req.body);
+    rep.json( req.body );
 })
 
 module.exports = router;

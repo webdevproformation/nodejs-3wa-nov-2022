@@ -12,6 +12,10 @@ block contenu
                 h1 #{produit.nom}
                 div.h2 #{produit.prix} €
             div.mb-3 #{produit.description}
-            label(for="quantite") quantité
-            input(type="number" name="quantite" value="1" class="mx-2" style="width:50px")
-            a(href="#" class="btn btn-success") ajouter au panier 
+            
+            form
+                label(for="quantite") quantité
+                input(type="number" name="quantite" value="1" class="mx-2" style="width:50px")
+                input(type="hidden" name="id" value=`${produit._id}`)
+                input(type="submit" class="btn btn-success" value="ajouter au panier")
+    script(src="/front/single.js") 

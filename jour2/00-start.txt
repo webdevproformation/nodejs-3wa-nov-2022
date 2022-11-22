@@ -127,3 +127,6 @@ Ajouter la session => express-session
 faire en sorte que la session soit stockée dans la base de données mongoDB 
 lorsque vous cliquez sur le bouton ajouter au panier => ajouter la référence produit et la quantité dans une objet { id : xxxxxx, qte : xxxxx }
 
+----------
+
+{"cookie":{"originalMaxAge":86400000,"expires":"2022-11-23T16:34:44.738Z","httpOnly":true,"path":"/"},"panier":[{"quantite":"1","id":"637ce564d68319045c72de74"}]}

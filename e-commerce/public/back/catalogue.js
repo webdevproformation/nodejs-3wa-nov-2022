@@ -1,5 +1,3 @@
-console.log("je suis le fichier catalogue js")
-
 document.querySelectorAll(".delete").forEach((btn) => {
     btn.addEventListener("click", e => {
         e.preventDefault();
