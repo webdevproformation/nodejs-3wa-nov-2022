@@ -100,3 +100,10 @@ bon appétit !! rdv 14h00 !!
 Cas pratique : 
 Afficher la liste des produits dans la page d'accueil du site et dans la page de gestion des produits 
 connexion à la base de donnée => mongoose 
+
+
+---------------------
+
+Cas pratique :
+1 mettre en place la méthode qui permet de supprimer des produits 
+2 mettre en place la méthode qui permet de mettre à jour des produits 
