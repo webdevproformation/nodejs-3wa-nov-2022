@@ -1,10 +1,10 @@
 extends ../index
 
 block title 
-    title créer un nouveau produit
+    title #{titre}
 
 block contenu_back
-    h1.mb-3 créer un nouveau produit
+    h1.mb-3 #{titre}
     form(method="POST" action="/admin/catalogue/new")
         input(type="text" class="form-control mb-3" placeholder="nom produit" name="nom")
         .row.g-3

@@ -107,3 +107,6 @@ connexion à la base de donnée => mongoose
 Cas pratique :
 1 mettre en place la méthode qui permet de supprimer des produits 
 2 mettre en place la méthode qui permet de mettre à jour des produits 
+
+
+rdv 15h40 pour l'update ! bon café !!
