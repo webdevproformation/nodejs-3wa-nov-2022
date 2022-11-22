@@ -66,4 +66,20 @@ Back office
 1 créer la page Accueil
 2 créer la page de gestion du catalogue 
 
+// cas pratique
+1  etablir une connexion à une base de données => mongoAtlas
+2 créer un model pour stocker les produits 
+    id 
+    nom 
+    image
+    prix 
+    une description
+    dt_creation
+    en stock 
+
+3 créer le formulaire pour créer un nouveau produit 
+4 tester que l'ajour fonctionne correctement 
+
+=> par la suite comment uploader des images dans un projet nodejs 
+
 
