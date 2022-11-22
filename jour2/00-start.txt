@@ -95,3 +95,8 @@ cas pratique :
 1 Ajouter une vérification AVANT insert dans la base de données => via librairie joi 
 2 afficher la liste des produits => axios qui permet de réaliser des requêtes ajax côté server 
 
+bon appétit !! rdv 14h00 !!
+
+Cas pratique : 
+Afficher la liste des produits dans la page d'accueil du site et dans la page de gestion des produits 
+connexion à la base de donnée => mongoose 

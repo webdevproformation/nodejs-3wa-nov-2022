@@ -17,27 +17,18 @@ block contenu_back
                 th en stock 
                 th action 
         tbody 
-            tr 
-                td 1
-                td produit 1
-                td 
-                    img(src="https://via.placeholder.com/100x50", alt="")
-                td 50
-                td 
-                    span.badge.bg-success en stock 
-                td 
-                    a(href="#" class="btn btn-warning me-2") update 
-                    a(href="#" class="btn btn-danger me-2") delete 
-            tr 
-                td 2
-                td produit 2
-                td 
-                    img(src="https://via.placeholder.com/100x50", alt="")
-                td 150
-                td 
-                    span.badge.bg-danger indisponible
-                td 
-                    a(href="#" class="btn btn-warning me-2") update 
-                    a(href="#" class="btn btn-danger me-2") delete 
-
-            
+            each produit in produits
+                tr 
+                    td #{produit._id}
+                    td #{produit.nom}
+                    td 
+                        img(src=`${produit.image}`, alt="" width="100")
+                    td #{produit.prix}
+                    td 
+                        if produit.en_stock
+                            span.badge.bg-success en stock 
+                        else 
+                            span.badge.bg-danger indisponible
+                    td 
+                        a(href=`/admin/catalogue/${produit._id}` class="btn btn-warning me-2") update 
+                        a(href=`/admin/catalogue/${produit._id}` class="btn btn-danger me-2") delete

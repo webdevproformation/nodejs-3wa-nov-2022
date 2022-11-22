@@ -8,8 +8,9 @@ router.get("/", (req, rep) => {
 })
 
 
-router.get("/catalogue", (req, rep) => {
-    rep.render("back/catalogue/index");
+router.get("/catalogue", async (req, rep) => {
+    const produits = await Produit.find()
+    rep.render("back/catalogue/index" , {produits});
 })
 
 router.get("/catalogue/new", (req, rep) => {
