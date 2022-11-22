@@ -1,0 +1,42 @@
+support de cours 
+
+url : https://formation.webdevpro.net/nodejs/
+login : nodejs
+password : nodejs
+
+------------------------
+
+repository :
+
+https://github.com/webdevproformation/nodejs-3wa-nov-2022
+
+
+des questions ???? 
+
+--------------------------
+
+=> créer une site e commerce avec toutes les technologies vues ensemble 
+
+Objectif :
+
+Front 
+- Page d'accueil => Catalogue 
+- Page Single => la page avec 1 seul produit => faire une commande 
+- Panier => liste de tous les produits commandés 
+- se créer une compte user 
+- choisir un Moyen de livraison /  
+- Payer => via le sandbox Stripe 
+- Mentions légales
+- Page de contact => en cas de réclamation 
+
+Espace personnel => 
+- la liste de toutes les commandes passées pour le client 
+
+-----------------
+
+Back => accessible uniquement aux gestionnaires du site internet 
+- gérer les produits du Catalogue => créer des produits dans le catalogue 
+- liste des utilisateurs => gestionnaires / les clients 
+- liste des commandes réalisées 
+
+
