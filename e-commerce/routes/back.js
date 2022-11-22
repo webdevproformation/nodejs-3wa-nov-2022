@@ -1,5 +1,5 @@
 const {Router} = require("express")
-const Produit = require("../models/produits");
+const { Produit , validationProduit} = require("../models/produits");
 
 const router = Router();
 
@@ -17,6 +17,13 @@ router.get("/catalogue/new", (req, rep) => {
 })
 
 router.post("/catalogue/new", async (req, rep) => {
+
+    req.body.en_stock = req.body.en_stock === "1" ? true : false ;
+
+    const {error} = validationProduit.validate(req.body)
+
+    if(error) return rep.json({message : error})
+
     let produit = new Produit(req.body);
     try{
         produit = await produit.save()
