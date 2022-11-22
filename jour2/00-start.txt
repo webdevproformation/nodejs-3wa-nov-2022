@@ -110,3 +110,12 @@ Cas pratique :
 
 
 rdv 15h40 pour l'update ! bon café !!
+
+
+------------------
+
+cas pratique : 
+mettre en place la page single 
+lors que l'on clique sur le lien voir le produit 
+créer la page produit ! 
+
