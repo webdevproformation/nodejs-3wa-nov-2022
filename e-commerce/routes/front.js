@@ -4,7 +4,8 @@ const { isValidObjectId } = require("mongoose");
 const { User , userValidation } = require("../models/user")
 const bcrypt = require("bcrypt")
 const getPanier = require("../lib/panier");
-const livraisonValidation = require("../models/livraison") 
+const livraisonValidation = require("../models/livraison")
+const Commande = require("../models/commande") 
 
 const router = Router();
 
@@ -129,5 +130,20 @@ router.post("/add/livraison", (req,rep) => {
     
     rep.redirect("/checkout");
 } )
+
+router.get("/paiement" , async(req, rep) => {
+
+    const maCommande = {
+        client : req.session.user,
+        produits : req.session.panier ,
+        livraison : req.session.livraison,
+        total : 1000
+    }
+
+    const commande = new Commande (maCommande)
+    const resultat = await commande.save();
+
+    rep.json(resultat)
+})
 
 module.exports = router;

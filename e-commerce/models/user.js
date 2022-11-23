@@ -19,4 +19,5 @@ const userValidation = Joi.object({
 const User = model("users" , schemaUser);
 
 module.exports.User = User
+module.exports.schemaUser = schemaUser
 module.exports.userValidation = userValidation
