@@ -53,17 +53,52 @@ router.get("/panier" , async (req , rep) => {
     rep.render("front/panier" , { total , panier } );
 })
 
+router.delete("/delete/panier/:id" , (req, rep) => {
+    const id = req.params.id ;
+    if(!isValidObjectId(id)) return rep.status(400).json({message : "id invalid"})
+    const panierFiltre = req.session.panier.filter( item => item.id !== id )
+    req.session.panier = panierFiltre ;
+    rep.json({message : "ok"})
+})
+
+router.put("/moins/panier/:id" , (req, rep) => {
+    const id = req.params.id ;
+    if(!isValidObjectId(id)) return rep.status(400).json({message : "id invalid"})
+    const produitAReduire = req.session.panier.find( item => item.id === id )
+    const index = req.session.panier.indexOf(produitAReduire)
+    if(req.session.panier[index].quantite > 1){
+        req.session.panier[index].quantite-- ; 
+        rep.json({message : "ok"})
+    }else {
+        const panierFiltre = req.session.panier.filter( item => item.id !== id )
+        req.session.panier = panierFiltre ;
+        rep.json({message : "ok"})
+    }
+})
+
+router.put("/plus/panier/:id" , (req, rep) => {
+    const id = req.params.id ;
+    if(!isValidObjectId(id)) return rep.status(400).json({message : "id invalid"})
+    const produitAReduire = req.session.panier.find( item => item.id === id )
+    const index = req.session.panier.indexOf(produitAReduire)
+        req.session.panier[index].quantite++ ; 
+    rep.json({message : "ok"})
+})
+
 // ajouter des produits dans le panier
 router.post("/add/panier", (req, rep) => {
-    if(!req.session.panier){
+    //console.log(req.session.panier)
+    // return rep.json(req.session.panier) 
+    if(!req.session.panier || !Array.isArray(req.session.panier) || req.session.panier[0] === null ){
         req.session.panier = []
     }
+    if(req.body.quantite < 1) return rep.status(400).json({message : "la quantité ne peut être négative ou null"});
+
      const produitAModifier = req.session.panier.find( item => item.id === req.body.id )
     // ici // ajouter plus de produits dans le panier 
     if(produitAModifier){
         // augmenter la quantité dans le panier
         const index  = req.session.panier.indexOf(produitAModifier)
-        console.log(index);
         req.session.panier[index].quantite += req.body.quantite
     }else {
         // sinon ajouter le produit dans la panier
