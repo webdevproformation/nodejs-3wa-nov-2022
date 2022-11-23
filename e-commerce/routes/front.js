@@ -17,11 +17,15 @@ router.get("/produit/:id", async (req, rep) => {
     rep.render("front/single" , { produit });
 })
 
+router.get("/panier" , (req , rep) => {
+    rep.render("front/panier" );
+})
+
+// ajouter des produits dans le panier
 router.post("/add/panier", (req, rep) => {
     if(!req.session.panier){
         req.session.panier = []
     }
-
      const produitAModifier = req.session.panier.find( item => item.id === req.body.id )
     // ici // ajouter plus de produits dans le panier 
     if(produitAModifier){
