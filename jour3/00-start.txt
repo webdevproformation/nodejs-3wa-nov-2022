@@ -13,3 +13,14 @@ cas pratique :
 
 3 afficher le contenu de la session.panier dans cette page 
 
+
+-------------------
+
+cas pratique :
+Dans la page panier 
+
+1 mettre en place le bouton supprimer de chaque ligne du panier 
+
+2 mettre en place les boutons - et + de chaque ligne 
+
+
