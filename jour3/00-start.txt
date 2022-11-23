@@ -24,3 +24,4 @@ Dans la page panier
 2 mettre en place les boutons - et + de chaque ligne 
 
 
+// rdv 14h00 bon appétit !!!
