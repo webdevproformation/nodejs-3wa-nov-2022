@@ -1,7 +1,9 @@
 document.querySelector("form").addEventListener("submit", e=> {
     e.preventDefault();
-    const formData =  new FormData(e.target)
-    const produit = Object.fromEntries(formData)
+    const produit = {
+        id : document.querySelector("#id").value ,
+        quantite : document.querySelector("#quantite").valueAsNumber ,
+    }
     console.log(produit)
     const optionsPost = {
         method : "POST" , 

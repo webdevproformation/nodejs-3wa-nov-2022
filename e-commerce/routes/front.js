@@ -21,6 +21,7 @@ router.post("/add/panier", (req, rep) => {
     if(!req.session.panier){
         req.session.panier = []
     }
+    // ici 
     req.session.panier.push(req.body);
     rep.json( req.body );
 })
