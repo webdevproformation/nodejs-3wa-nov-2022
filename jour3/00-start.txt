@@ -3,3 +3,13 @@ gestion du panier
 cas pratique :
 si vous cliquez plusieurs fois sur le bouton panier dans le front pour le même produit 
 je veux que la quantité soit cumulée et non qu'il y ait un push à chaque ajout dans le panier 
+
+------------------
+
+cas pratique :
+1 ajouter dans en dessous du bouton ajouter au panier un bandeau précisant que le produit a bien été ajouté au panier 
+
+2 ajouter un nouveau lien dans la barre de menu => panier 
+
+3 afficher le contenu de la session.panier dans cette page 
+
