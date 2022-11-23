@@ -22,7 +22,7 @@ block contenu
                     td #{item.nom}
                     td  
                         img(src=`${item.image}` alt="" , width="100")
-                    td #{item.prix} 
+                    td.text-center #{item.prix.toLocaleString('fr-FR')} 
                     td
                         form.d-flex.align-items-center 
                             button.btn.btn-primary.btn-sm -
@@ -30,8 +30,8 @@ block contenu
                             button.btn.btn-primary.btn-sm +
                     td 
                         button.btn.btn-danger.btn-sm supprimer 
-                    td #{item.total} 
+                    td.text-end #{item.total.toLocaleString('fr-FR')} 
         tfoot 
             tr 
                 td(colspan="6" class="text-end") total panier 
-                td #{total}
+                td.text-end #{total.toLocaleString('fr-FR')}
