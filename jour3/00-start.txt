@@ -25,3 +25,36 @@ Dans la page panier
 
 
 // rdv 14h00 bon appétit !!!
+
+mettre en place une page identification
+
+deux formulaires 
+
+=> créer un profil
+email / login 
+
+=> créer un nouveau profil dans la base de données 
+
+créer le profil 
+email 
+password => hashé 
+role => client 
+
+-------------------------
+
+
+=> vous connection 
+email / login
+
+---------------------- 
+
+
+
+=> checkout 
+
+=> 
+
+
+
+
+
