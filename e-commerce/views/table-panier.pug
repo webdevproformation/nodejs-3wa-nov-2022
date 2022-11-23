@@ -1,0 +1,34 @@
+table.table.table-striped.align-middle
+        thead 
+            tr
+                th #id 
+                th nom 
+                th image 
+                th prix unitaire 
+                th quantité 
+                th action 
+                th total 
+        tbody
+            if panier.length === 0 
+                tr 
+                    td(colspan="7" class="text-center") aucun produit dans le panier
+            else 
+                for item in panier 
+                    tr
+                        td #{item.id}
+                        td #{item.nom}
+                        td  
+                            img(src=`${item.image}` alt="" , width="100")
+                        td.text-center #{item.prix.toLocaleString('fr-FR')} 
+                        td
+                            span.d-flex.align-items-center 
+                                button.btn.btn-primary.btn-sm.moins(data-id=`${item.id}`) -
+                                input(type="text" value=`${item.quantite}` style="width:30px" class="text-center mx-2")
+                                button.btn.btn-primary.btn-sm.plus(data-id=`${item.id}`) +
+                        td 
+                            button.btn.btn-danger.btn-sm.delete(data-id=`${item.id}`) supprimer 
+                        td.text-end #{item.total.toLocaleString('fr-FR')} 
+            tfoot 
+                tr 
+                    td(colspan="6" class="text-end") total panier 
+                    td.text-end #{total.toLocaleString('fr-FR')}

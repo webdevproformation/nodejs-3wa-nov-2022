@@ -1,0 +1,20 @@
+extends ../layout
+
+block title 
+    title Checkout
+
+block contenu 
+    h1 Checkout
+    hr
+    h2 Client 
+    ul 
+        li nom : #{user.email}
+    hr
+    h2 Votre panier
+    include ../table-panier 
+    hr
+    h2 Livraison 
+    hr 
+    h2 Paiement
+
+

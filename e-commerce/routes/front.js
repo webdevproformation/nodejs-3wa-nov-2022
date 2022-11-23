@@ -3,6 +3,7 @@ const { Produit } = require("../models/produits")
 const { isValidObjectId } = require("mongoose");
 const { User , userValidation } = require("../models/user")
 const bcrypt = require("bcrypt")
+const getPanier = require("../lib/panier");
 
 const router = Router();
 
@@ -20,37 +21,8 @@ router.get("/produit/:id", async (req, rep) => {
 })
 
 router.get("/panier" , async (req , rep) => {
-    const panier = []
-    
-    const getProduit = async (item) => {
-        const produitBdd =  await Produit.findById(item.id)
-        panier.push({...produitBdd._doc , ...item , total : item.quantite * produitBdd._doc.prix}) 
-    }
 
-    const panierComplet = req.session.panier.map( item => getProduit(item) )
-    
-    await Promise.all(panierComplet); // attendre que plusieurs requête async soient exécutées pour passer à la suite 
-    // Promise.all([ promise , promise ])
-
-    panier.sort((a, b) => {
-        const nameA = a.nom.toUpperCase(); // ignore upper and lowercase
-        const nameB = b.nom.toUpperCase(); // ignore upper and lowercase
-        if (nameA < nameB) {
-            return -1;
-        }
-        if (nameA > nameB) {
-            return 1;
-        }
-
-        // names must be equal
-        return 0;
-    });
-
-
-   // console.log(req.session.panier)
-    let total = panier.reduce( (cumul , item) => {
-        return cumul + item.total
-    } , 0 )
+    const [panier , total] = await getPanier(req)
 
     rep.render("front/panier" , { total , panier } );
 })
@@ -132,10 +104,18 @@ router.post("/add/user" , async (req, rep) => {
     const passwordHashed = await bcrypt.hash( req.body.password , salt )
     const user = new User({
         email : req.body.email ,
-        password : passwordHashed
+        password : passwordHashed,
+        role : "client"
     })
     const result = await user.save();
-    rep.json(result)
+    req.session.user = result ;
+    rep.redirect("/checkout")
+})
+
+router.get("/checkout" , async (req, rep) => {
+    const [panier , total] = await getPanier(req);
+    const user = req.session.user ;
+    rep.render("front/checkout" , { panier , user , total })
 })
 
 module.exports = router;

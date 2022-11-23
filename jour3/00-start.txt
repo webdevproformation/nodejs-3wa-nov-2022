@@ -52,6 +52,10 @@ cas pratique :
 mettre en place passport local strategy pour réaliser l'authentification et stocker le profil utilisateur dans la session 
 
 
+rdv 15h50 bon café !!!
+
+
+{"cookie":{"originalMaxAge":86400000,"expires":"2022-11-24T13:01:47.324Z","httpOnly":true,"path":"/"},"panier":[{"id":"637cba7e26dd38e74a8ba727","quantite":1}]}
 
 
 
