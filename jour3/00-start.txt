@@ -48,11 +48,8 @@ email / login
 
 ---------------------- 
 
-
-
-=> checkout 
-
-=> 
+cas pratique :
+mettre en place passport local strategy pour réaliser l'authentification et stocker le profil utilisateur dans la session 
 
 
 
