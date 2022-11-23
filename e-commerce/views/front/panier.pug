@@ -5,7 +5,7 @@ block title
 
 block contenu 
     h1 Votre panier
-    table.table.table-striped 
+    table.table.table-striped.align-middle
         thead 
             tr
                 th #id 
@@ -16,4 +16,22 @@ block contenu
                 th action 
                 th total 
         tbody 
-            
+            for item in panier 
+                tr
+                    td #{item.id}
+                    td #{item.nom}
+                    td  
+                        img(src=`${item.image}` alt="" , width="100")
+                    td #{item.prix} 
+                    td
+                        form.d-flex.align-items-center 
+                            button.btn.btn-primary -
+                            input(type="text" value=`${item.quantite}` style="width:30px" class="text-center mx-2")
+                            button.btn.btn-primary +
+                    td 
+                        button.btn.btn-danger supprimer 
+                    td #{item.total} 
+        tfoot 
+            tr 
+                td(colspan="6" class="text-end") total panier 
+                td #{total}
