@@ -1,6 +1,8 @@
 const { Router } = require("express")
 const { Produit } = require("../models/produits")
 const { isValidObjectId } = require("mongoose");
+const { User , userValidation } = require("../models/user")
+const bcrypt = require("bcrypt")
 
 const router = Router();
 
@@ -106,6 +108,34 @@ router.post("/add/panier", (req, rep) => {
     } 
     //req.session.panier = [];
     rep.json( req.session.panier );
+})
+
+// page identification
+router.get("/identification" , (req, rep) => {
+    rep.render("front/identification")
+})
+
+router.post("/add/user" , async (req, rep) => {
+
+    // verifier que l'utilisateur a rempli le formulaire de manière conforme
+    const {error} = userValidation.validate(req.body)
+
+    if(error) return rep.status(400).json({message : "formulaire non conforme"})
+
+    // vérifier qu'il n'y a pas un user qui a déjà le même email 
+    const userRecherche = await User.findOne({email : req.body.email})
+
+    if(userRecherche) return rep.status(400).json({message : "email déjà utilisé"})
+
+    // hasher le password AVANT de l'insérer en base de données
+    const salt = await bcrypt.genSalt(10)
+    const passwordHashed = await bcrypt.hash( req.body.password , salt )
+    const user = new User({
+        email : req.body.email ,
+        password : passwordHashed
+    })
+    const result = await user.save();
+    rep.json(result)
 })
 
 module.exports = router;
