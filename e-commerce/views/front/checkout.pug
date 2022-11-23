@@ -14,14 +14,16 @@ block contenu
     include ../table-panier 
     hr
     h2 Livraison 
-    form(action="")
-        input(type="text" class="form-control" placeholder="rue") 
-        input(type="text" class="form-control my-3" placeholder="cp") 
-        input(type="text" class="form-control mb-3" placeholder="ville") 
+    form(action="/add/livraison" method="POST")
+        input(type="text" class="form-control" placeholder="rue" name="rue" value=`${livraison.rue}`) 
+        input(type="text" class="form-control my-3" placeholder="cp" name="cp" value=`${livraison.cp}`) 
+        input(type="text" class="form-control mb-3" placeholder="ville" name="ville" value=`${livraison.ville}`) 
         .text-end
             input(type="submit", value="Enregistrer" , class="btn btn-outline-dark")
     hr 
-    h2 Paiement
+    h2.d-flex.justify-content-between.mb-5 Paiement
+       a(href="/paiement" class="btn btn-success") Paiement 
+
 
     script(src="/front/checkout.js") 
 

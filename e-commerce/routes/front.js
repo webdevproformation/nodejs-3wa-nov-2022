@@ -4,6 +4,7 @@ const { isValidObjectId } = require("mongoose");
 const { User , userValidation } = require("../models/user")
 const bcrypt = require("bcrypt")
 const getPanier = require("../lib/panier");
+const livraisonValidation = require("../models/livraison") 
 
 const router = Router();
 
@@ -115,7 +116,18 @@ router.post("/add/user" , async (req, rep) => {
 router.get("/checkout" , async (req, rep) => {
     const [panier , total] = await getPanier(req);
     const user = req.session.user ;
-    rep.render("front/checkout" , { panier , user , total })
+    const livraison = req.session.livraison ? req.session.livraison : {} ;
+    rep.render("front/checkout" , { panier , user , total , livraison })
 })
+
+router.post("/add/livraison", (req,rep) => {
+    
+    const {error} = livraisonValidation.validate(req.body);
+    if(error) return rep.status(400).json({message : "adresse incorrect"})
+
+    req.session.livraison = req.body 
+    
+    rep.redirect("/checkout");
+} )
 
 module.exports = router;

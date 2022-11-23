@@ -68,3 +68,25 @@ livraison {
     ville 
 }
 avant d'ajouter => vérifier que le formulaire est rempli convenablement
+
+
+{"cookie":{"originalMaxAge":86400000,"expires":"2022-11-24T15:49:17.009Z","httpOnly":true,"path":"/"},"panier":[{"id":"637cba7e26dd38e74a8ba727","quantite":1}],"user":{"email":"client2@yahoo.fr","password":"$2b$10$AEHluzC.9OEHuE/dwv0om.JVOnDEqdDvMYEBabi3SNGvX6LsijFtC","role":"client","_id":"637e35807478cf6f747f9a02","dt_creation":"2022-11-23T15:00:16.870Z","__v":0},"livraison":{"rue":"75 rue de Paris","cp":"75000","ville":"Paris"}}
+
+cas pratique
+
+créer une dernière collection dans notre base de données 
+commandes 
+    {
+        client  => { id / email }  ,
+        produits : [ 
+             { ... } ,
+             { ... } ,
+        ],
+        total : 456789
+        livraison : { rue , cp , ville }
+        dt_creation ...  
+        _id : .... 
+    }
+
+si tout est ok => save ! 
+    
