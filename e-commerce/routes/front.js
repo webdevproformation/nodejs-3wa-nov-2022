@@ -17,8 +17,14 @@ router.get("/produit/:id", async (req, rep) => {
     rep.render("front/single" , { produit });
 })
 
-router.get("/panier" , (req , rep) => {
-    rep.render("front/panier" );
+router.get("/panier" , async (req , rep) => {
+    const panier = []
+    
+    
+    
+    
+    console.log(req.session.panier)
+    rep.render("front/panier" , { panier } );
 })
 
 // ajouter des produits dans le panier
