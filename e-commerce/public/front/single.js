@@ -4,7 +4,6 @@ document.querySelector("form").addEventListener("submit", e=> {
         id : document.querySelector("#id").value ,
         quantite : document.querySelector("#quantite").valueAsNumber ,
     }
-    console.log(produit)
     const optionsPost = {
         method : "POST" , 
         body : JSON.stringify(produit) ,

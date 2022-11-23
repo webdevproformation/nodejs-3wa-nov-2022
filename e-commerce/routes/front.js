@@ -21,9 +21,20 @@ router.post("/add/panier", (req, rep) => {
     if(!req.session.panier){
         req.session.panier = []
     }
-    // ici 
-    req.session.panier.push(req.body);
-    rep.json( req.body );
+
+     const produitAModifier = req.session.panier.find( item => item.id === req.body.id )
+    // ici // ajouter plus de produits dans le panier 
+    if(produitAModifier){
+        // augmenter la quantité dans le panier
+        const index  = req.session.panier.indexOf(produitAModifier)
+        console.log(index);
+        req.session.panier[index].quantite += req.body.quantite
+    }else {
+        // sinon ajouter le produit dans la panier
+        req.session.panier.push(req.body);
+    } 
+    //req.session.panier = [];
+    rep.json( req.session.panier );
 })
 
 module.exports = router;

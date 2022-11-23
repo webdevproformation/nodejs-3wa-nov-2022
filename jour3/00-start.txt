@@ -1,5 +1,5 @@
 gestion du panier 
 
-
+cas pratique :
 si vous cliquez plusieurs fois sur le bouton panier dans le front pour le même produit 
 je veux que la quantité soit cumulée et non qu'il y ait un push à chaque ajout dans le panier 
