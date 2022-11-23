@@ -14,6 +14,12 @@ block contenu
     include ../table-panier 
     hr
     h2 Livraison 
+    form(action="")
+        input(type="text" class="form-control" placeholder="rue") 
+        input(type="text" class="form-control my-3" placeholder="cp") 
+        input(type="text" class="form-control mb-3" placeholder="ville") 
+        .text-end
+            input(type="submit", value="Enregistrer" , class="btn btn-outline-dark")
     hr 
     h2 Paiement
 
