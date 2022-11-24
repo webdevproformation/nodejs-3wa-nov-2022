@@ -11,7 +11,7 @@ const router = Router();
 
 router.get("/", async (req, rep) => {
     const produits = await Produit.find({en_stock : true})
-    rep.render("front/index" , { produits });
+    rep.render("front/index" , { produits , session : req.session});
 })
 
 router.get("/produit/:id", async (req, rep) => {
@@ -19,7 +19,7 @@ router.get("/produit/:id", async (req, rep) => {
     if(!isValidObjectId(id)) return rep.status(400).json({message : "id invalid"})
     const produit = await Produit.findById(id)
     if(!produit) return rep.status(404).json({message : "aucun produit trouvé"})
-    rep.render("front/single" , { produit });
+    rep.render("front/single" , { produit, session : req.session });
 })
 
 router.get("/panier" , async (req , rep) => {
@@ -28,9 +28,9 @@ router.get("/panier" , async (req , rep) => {
     if(req.session.panier ){
         [panier , total] = await getPanier(req)
     }
-    const isLogged = req.session.user ? true : false
+    const isLogged = req.session.passport && req.session.passport.user ? true : false
  
-    rep.render("front/panier" , { total , panier , isLogged } );
+    rep.render("front/panier" , { total , panier , isLogged , session : req.session } );
 })
 
 router.delete("/delete/panier/:id" , (req, rep) => {
@@ -90,7 +90,7 @@ router.post("/add/panier", (req, rep) => {
 
 // page identification
 router.get("/identification" , (req, rep) => {
-    rep.render("front/identification")
+    rep.render("front/identification" , {session : req.session})
 })
 
 router.post("/add/user" , async (req, rep) => {
@@ -114,16 +114,17 @@ router.post("/add/user" , async (req, rep) => {
         role : "client"
     })
     const result = await user.save();
-    req.session.user = result ;
+    req.session.passport =  { user : result }  ;
     rep.redirect("/checkout")
 })
 
 router.get("/checkout" , async (req, rep) => {
     const [panier , total] = await getPanier(req);
-    const user = req.session.user ;
-    const livraison = req.session.livraison ? req.session.livraison : {} ;
-    rep.render("front/checkout" , { panier , user , total , livraison })
+    const user = req.session.passport.user ;
+    const livraison = req.session.livraison ? req.session.livraison : {rue : "" , cp : "" , ville : ""} ;
+    rep.render("front/checkout" , { panier , user , total , livraison , session : req.session })
 })
+
 
 router.post("/add/livraison", (req,rep) => {
     
@@ -141,7 +142,7 @@ router.get("/paiement" , async(req, rep) => {
 
     const maCommande = {
         client : {
-            email : req.session.user.email
+            email : req.session.passport.user.email
         },
         produits : panier ,
         livraison : req.session.livraison,
@@ -160,11 +161,11 @@ router.get("/paiement" , async(req, rep) => {
 })
 
 router.get("/profil", async (req, rep) => {
-    const email = req.session.user.email
+    const email = req.session.passport.user.email
 
     const commandes = await Commande.find({'client.email' : email})
 
-    rep.render("front/profil" , {commandes} )
+    rep.render("front/profil" , {commandes ,session : req.session} )
 })
 
 

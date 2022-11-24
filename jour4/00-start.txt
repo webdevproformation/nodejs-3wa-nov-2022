@@ -59,3 +59,11 @@ cas pratique
 2 rendre le menu dynamique 
     si on n'est pas connecté => Panier / Connexion
     si on est connecté => Panier / Profil / Back Office / Deconnexion 
+
+{"cookie":{"originalMaxAge":86400000,"expires":"2022-11-25T14:17:29.684Z","httpOnly":true,"path":"/"},"passport":{"user":"637e35807478cf6f747f9a02"}}
+
+
+{"cookie":{"originalMaxAge":86400000,"expires":"2022-11-25T14:22:47.359Z","httpOnly":true,"path":"/"},"passport":{"user":{"_id":"637e35807478cf6f747f9a02","email":"client2@yahoo.fr","password":"$2b$10$AEHluzC.9OEHuE/dwv0om.JVOnDEqdDvMYEBabi3SNGvX6LsijFtC","role":"client","dt_creation":"2022-11-23T15:00:16.870Z","__v":0}}}
+
+
+{"cookie":{"originalMaxAge":86400000,"expires":"2022-11-25T14:34:51.021Z","httpOnly":true,"path":"/"},"panier":[{"id":"637cba7e26dd38e74a8ba727","quantite":1},{"id":"637ddc0eedb46d9866ad1ce5","quantite":1}]}

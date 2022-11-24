@@ -4,7 +4,7 @@ const passport = require("passport")
 const router = Router();
 
 router.get("/connexion" , (req, rep) => {
-    rep.render("front/connexion")
+    rep.render("front/connexion" ,{session : req.session})
 })
 
 router.post("/connexion" , passport.authenticate(
@@ -14,5 +14,11 @@ router.post("/connexion" , passport.authenticate(
             // si admin => back office // si on est client Accueil 
         }
 ))
+
+router.get("/deconnexion" , (req, rep) => {
+    req.logout(() => {
+        rep.redirect("/connexion");
+    })
+})
 
 module.exports = router ;

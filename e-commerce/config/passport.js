@@ -26,7 +26,7 @@ const strategy = new LocalStrategy( mapper , verification)
 passport.use(strategy);
 
 passport.serializeUser((user , done) =>{
-    done(null, user.id)
+    done(null, user)
 })
 passport.deserializeUser(async(userId, done) => {
     try{
