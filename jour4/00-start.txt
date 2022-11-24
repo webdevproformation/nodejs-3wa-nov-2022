@@ -80,3 +80,9 @@ cas pratique :
 
 {"cookie":{"originalMaxAge":86400000,"expires":"2022-11-25T15:37:23.441Z","httpOnly":true,"path":"/"}}
 
+-------------
+
+// cas pratique 
+dans la page afficher la liste des utilisateurs 
+dans un tableau email / role / dt_creation / action 
+                                                supprimer ou modifier 
