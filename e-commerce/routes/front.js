@@ -167,8 +167,6 @@ router.get("/profil", async (req, rep) => {
     rep.render("front/profil" , {commandes} )
 })
 
-router.get("/connexion" , async (req, rep) => {
-    rep.render("front/connexion")
-})
+
 
 module.exports = router;
