@@ -14,6 +14,7 @@ const schemaProduitPanier = new Schema({
     nom : String ,
     image : String ,
     prix : Number ,
+    quantite : Number
 })
 
 const Produit = model("produits" , schemaProduit);

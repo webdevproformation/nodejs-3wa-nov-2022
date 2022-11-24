@@ -24,4 +24,7 @@ le bon de commande => table / collection commandes
 
 cas pratique 
 1 réalisez les vérifications préalables avant d'enregitrer la commande en base de donnée via joi 
-2 mettre un total et une liste de produits corrects (qui correspond au panier) dans la base de données pour la commande
+2 mettre un total et une liste de produits corrects (qui correspond au contenu au panier) dans la base de données pour la commande
+
+
+{"cookie":{"originalMaxAge":86400000,"expires":"2022-11-24T20:36:18.006Z","httpOnly":true,"path":"/"},"panier":[{"id":"637cba7e26dd38e74a8ba727","quantite":1},{"id":"637ce564d68319045c72de74","quantite":10}],"user":{"email":"client2@yahoo.fr","password":"$2b$10$AEHluzC.9OEHuE/dwv0om.JVOnDEqdDvMYEBabi3SNGvX6LsijFtC","role":"client","_id":"637e35807478cf6f747f9a02","dt_creation":"2022-11-23T15:00:16.870Z","__v":0},"livraison":{"rue":"75 rue de Paris","cp":"75000","ville":"Marseille"}}

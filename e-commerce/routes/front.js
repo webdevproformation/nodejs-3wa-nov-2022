@@ -5,7 +5,7 @@ const { User , userValidation } = require("../models/user")
 const bcrypt = require("bcrypt")
 const getPanier = require("../lib/panier");
 const livraisonValidation = require("../models/livraison")
-const Commande = require("../models/commande") 
+const {Commande , validationCommande} = require("../models/commande") 
 
 const router = Router();
 
@@ -133,21 +133,19 @@ router.post("/add/livraison", (req,rep) => {
 
 router.get("/paiement" , async(req, rep) => {
 
+    const [panier , total] = await getPanier(req)
+
     const maCommande = {
-        client : req.session.user,
-        produits : [
-            {
-                produit : await Produit.findById(req.session.panier[0].id),
-                quantite : req.session.panier[0].quantite
-            } ,
-            {
-                produit : await Produit.findById(req.session.panier[1].id),
-                quantite : req.session.panier[1].quantite
-            } 
-        ] ,
+        client : {
+            email : req.session.user.email
+        },
+        produits : panier ,
         livraison : req.session.livraison,
-        total : 6120
+        total : total
     }
+    const {error} = validationCommande.validate(maCommande, {abortEarly:false});
+
+    if(error) return rep.status(400).json({message : error})
 
     const commande = new Commande (maCommande)
     const resultat = await commande.save();
