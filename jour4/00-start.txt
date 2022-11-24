@@ -45,6 +45,7 @@ une fois que la commande est passée =>
 cas pratique
 
 via passport et passport-local mettre en place un système d'authentification 
+npm i passport passport-local
 1 ajouter une page Login 
 2 formulaire 
 3 initialiser passport / passport-local

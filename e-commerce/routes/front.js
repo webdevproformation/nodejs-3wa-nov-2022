@@ -23,10 +23,13 @@ router.get("/produit/:id", async (req, rep) => {
 })
 
 router.get("/panier" , async (req , rep) => {
-
-    const [panier , total] = await getPanier(req)
+    let panier = [];
+    let total = 0 ;
+    if(req.session.panier ){
+        [panier , total] = await getPanier(req)
+    }
     const isLogged = req.session.user ? true : false
-
+ 
     rep.render("front/panier" , { total , panier , isLogged } );
 })
 
@@ -162,6 +165,10 @@ router.get("/profil", async (req, rep) => {
     const commandes = await Commande.find({'client.email' : email})
 
     rep.render("front/profil" , {commandes} )
+})
+
+router.get("/connexion" , async (req, rep) => {
+    rep.render("front/connexion")
 })
 
 module.exports = router;
