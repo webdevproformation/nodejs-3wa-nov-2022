@@ -135,9 +135,18 @@ router.get("/paiement" , async(req, rep) => {
 
     const maCommande = {
         client : req.session.user,
-        produits : req.session.panier ,
+        produits : [
+            {
+                produit : await Produit.findById(req.session.panier[0].id),
+                quantite : req.session.panier[0].quantite
+            } ,
+            {
+                produit : await Produit.findById(req.session.panier[1].id),
+                quantite : req.session.panier[1].quantite
+            } 
+        ] ,
         livraison : req.session.livraison,
-        total : 1000
+        total : 6120
     }
 
     const commande = new Commande (maCommande)

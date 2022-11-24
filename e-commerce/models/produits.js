@@ -10,6 +10,12 @@ const schemaProduit = new Schema({
     en_stock : Boolean     
 });
 
+const schemaProduitPanier = new Schema({
+    nom : String ,
+    image : String ,
+    prix : Number ,
+})
+
 const Produit = model("produits" , schemaProduit);
 
 const validationProduit = Joi.object({
@@ -21,4 +27,4 @@ const validationProduit = Joi.object({
 })
 
 
-module.exports = { Produit , validationProduit } ; 
+module.exports = { Produit , validationProduit , schemaProduit , schemaProduitPanier } ; 

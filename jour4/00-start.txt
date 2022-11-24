@@ -1,0 +1,23 @@
+support de cours 
+
+url : https://formation.webdevpro.net/nodejs/
+login : nodejs
+password : nodejs
+
+------------------------
+
+repository :
+
+https://github.com/webdevproformation/nodejs-3wa-nov-2022
+
+
+le bon de commande => table / collection commandes 
+
+{
+    client :
+    prouits 
+    livraison 
+    total 
+    dt_creation
+    id 
+}

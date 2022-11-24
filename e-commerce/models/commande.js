@@ -1,20 +1,17 @@
 const { Schema , model , Types } = require("mongoose");
-const { schemaUser } = require("./user")
+const { schemaUserPanier } = require("./user")
+const { schemaProduitPanier } = require("./produits")
 
 const schemaCommande = new Schema({
-    client : schemaUser , 
+    client : schemaUserPanier , 
     produits : [
         {
-            _id  : Types.ObjectId ,
-            nom : String ,
-            quantite : Number,
-            prix : Number,
-            total : Number
+            produit : schemaProduitPanier ,
+            quantite : Number
         }
     ] ,
     total : Number ,
     livraison : {
-        _id : Types.ObjectId ,
         rue : String ,
         cp : Number ,
         ville : String

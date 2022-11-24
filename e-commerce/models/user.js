@@ -11,6 +11,10 @@ const schemaUser = new Schema({
     dt_creation : {type : Date , default : Date.now}
 });
 
+const schemaUserPanier = new Schema({
+    email : String 
+});
+
 const userValidation = Joi.object({
     email :  Joi.string().email({ tlds: { allow: false } }).required(),
     password : Joi.string().min(5).required()
@@ -21,3 +25,4 @@ const User = model("users" , schemaUser);
 module.exports.User = User
 module.exports.schemaUser = schemaUser
 module.exports.userValidation = userValidation
+module.exports.schemaUserPanier = schemaUserPanier
