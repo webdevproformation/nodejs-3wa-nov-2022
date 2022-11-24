@@ -1,0 +1,27 @@
+extends ../layout
+
+block title 
+    title Profil utilisateur
+
+block contenu 
+    h1 Bienvenu dans votre profil utilisateur 
+
+    h2 liste des commandes réalisées 
+
+    table.table.table-striped.align-middle 
+        thead 
+            tr 
+                th #num commande 
+                th nombre de produit
+                th montant commande 
+                th date commande 
+                th action 
+        tbody 
+            for commande in commandes
+                tr 
+                    td #{commande._id} 
+                    td #{commande.produits.length} 
+                    td #{commande.total}
+                    td #{ new Intl.DateTimeFormat('fr-Fr').format(commande.dt_creation)  }
+                    th 
+                        a(href="/profil/detail/commande" class="btn btn-outline-dark btn-sm") voir le détail   

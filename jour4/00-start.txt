@@ -33,5 +33,8 @@ cas pratique
 
 une fois que la commande est passée => 
 1 supprimer la variable panier de la session de l'utilisateur 
+
+{"cookie":{"originalMaxAge":86400000,"expires":"2022-11-25T10:21:56.919Z","httpOnly":true,"path":"/"},"user":{"email":"client2@yahoo.fr","password":"$2b$10$AEHluzC.9OEHuE/dwv0om.JVOnDEqdDvMYEBabi3SNGvX6LsijFtC","role":"client","_id":"637e35807478cf6f747f9a02","dt_creation":"2022-11-23T15:00:16.870Z","__v":0},"livraison":{"rue":"75 rue de Paris","cp":"75000","ville":"Marseille"}}
+
 2 dirigé automatiquement vers la page Profil  cette page 
-3 affiche la liste de toutes les commandes qu'il a réalisé 
+3 affiche la liste de toutes les commandes qu'il a réalisées par le client 

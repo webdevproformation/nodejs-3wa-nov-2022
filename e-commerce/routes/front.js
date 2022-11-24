@@ -25,8 +25,9 @@ router.get("/produit/:id", async (req, rep) => {
 router.get("/panier" , async (req , rep) => {
 
     const [panier , total] = await getPanier(req)
+    const isLogged = req.session.user ? true : false
 
-    rep.render("front/panier" , { total , panier } );
+    rep.render("front/panier" , { total , panier , isLogged } );
 })
 
 router.delete("/delete/panier/:id" , (req, rep) => {
@@ -150,7 +151,17 @@ router.get("/paiement" , async(req, rep) => {
     const commande = new Commande (maCommande)
     const resultat = await commande.save();
 
-    rep.json(resultat)
+    // supprimer le panier de la session
+    delete req.session.panier ;
+    rep.redirect("/profil");
+})
+
+router.get("/profil", async (req, rep) => {
+    const email = req.session.user.email
+
+    const commandes = await Commande.find({'client.email' : email})
+
+    rep.render("front/profil" , {commandes} )
 })
 
 module.exports = router;

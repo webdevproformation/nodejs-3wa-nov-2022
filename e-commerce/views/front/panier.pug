@@ -7,6 +7,9 @@ block contenu
     h1 Votre panier
     include ../table-panier 
     .text-end 
-        a(href="/identification" class="btn btn-outline-dark") s'identifier    
+        if isLogged
+            a(href="/checkout" class="btn btn-outline-dark") checkout    
+        else
+            a(href="/identification" class="btn btn-outline-dark") s'identifier    
 
     script(src="/front/panier.js")
