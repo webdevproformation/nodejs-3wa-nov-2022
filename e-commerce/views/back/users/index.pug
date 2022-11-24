@@ -1,0 +1,32 @@
+extends ../index
+
+block title 
+    title Gestion des utilisateurs de la boutique
+
+block contenu_back
+    h1 Gestion des utilisateurs de la boutique
+    .my-3 
+        a(href="/admin/users/new" class="btn btn-outline-primary") créer nouveau profil user
+    table.table.table-striped.align-middle
+        thead 
+            tr  
+                th #id 
+                th email 
+                th role
+                th dt creation 
+                th action 
+        tbody 
+            each user in users
+                tr 
+                    td #{user._id}
+                    td #{user.email}
+                    td 
+                        if user.role === "admin"
+                            span.badge.bg-info #{user.role} 
+                        else 
+                            span.badge.bg-warning #{user.role}
+                    td #{ new Intl.DateTimeFormat('fr-Fr').format(user.dt_creation)  }
+                    td 
+                        a(href=`/admin/users/update/${user._id}` class="btn btn-warning me-2 update") update 
+                        a(href=`/admin/users/${user._id}` class="btn btn-danger me-2 delete") delete
+    script(src="/back/catalogue.js")

@@ -23,5 +23,6 @@ app.use(passport.session());
 app.use("/" , require("./routes/front"))
 app.use("/" , require("./routes/authentification"));
 app.use("/admin" , require("./routes/back"))
+app.use("/admin" , require("./routes/back-users"))
 
 app.listen( PORT , () => console.log(`express start on ${PORT}`) )

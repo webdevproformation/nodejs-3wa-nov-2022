@@ -15,7 +15,7 @@ router.get("/catalogue", async (req, rep) => {
 })
 
 router.get("/catalogue/new", (req, rep) => {
-    rep.render("back/catalogue/form",{titre : "créer un nouveau produit"});
+    rep.render("back/catalogue/form",{titre : "créer un nouveau produit", session : req.session});
 })
 
 router.post("/catalogue/new", async (req, rep) => {
