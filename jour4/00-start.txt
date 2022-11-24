@@ -38,3 +38,15 @@ une fois que la commande est passée =>
 
 2 dirigé automatiquement vers la page Profil  cette page 
 3 affiche la liste de toutes les commandes qu'il a réalisées par le client 
+
+
+------------------
+
+cas pratique
+
+via passport et passport-local mettre en place un système d'authentification 
+1 ajouter une page Login 
+2 formulaire 
+3 initialiser passport / passport-local
+4 créer un deuxième compte dans la table users 
+5 essayer de vous authentifier avec ce compte créé ! 
