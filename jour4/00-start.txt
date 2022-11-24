@@ -21,3 +21,7 @@ le bon de commande => table / collection commandes
     dt_creation
     id 
 }
+
+cas pratique 
+1 réalisez les vérifications préalables avant d'enregitrer la commande en base de donnée via joi 
+2 mettre un total et une liste de produits corrects (qui correspond au panier) dans la base de données pour la commande
