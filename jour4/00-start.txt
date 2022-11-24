@@ -51,3 +51,11 @@ npm i passport passport-local
 3 initialiser passport / passport-local
 4 créer un deuxième compte dans la table users 
 5 essayer de vous authentifier avec ce compte créé ! 
+
+-----------------
+
+cas pratique 
+1 mettre en place la déconnexion 
+2 rendre le menu dynamique 
+    si on n'est pas connecté => Panier / Connexion
+    si on est connecté => Panier / Profil / Back Office / Deconnexion 
