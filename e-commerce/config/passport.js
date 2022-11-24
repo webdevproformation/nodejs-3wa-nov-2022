@@ -21,7 +21,7 @@ function verification(username , password , done){
     })
 }
 
-const strategy = new LocalStrategy( mapper , verification)
+const strategy = new LocalStrategy( mapper , verification )
 
 passport.use(strategy);
 
@@ -36,5 +36,3 @@ passport.deserializeUser(async(userId, done) => {
         done(ex)
     }
 })
-
-// rdv 14h00 pour la suite et fin de la config de passport !!

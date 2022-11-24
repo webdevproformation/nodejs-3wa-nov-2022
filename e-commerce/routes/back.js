@@ -5,13 +5,13 @@ const {isValidObjectId} = require("mongoose");
 const router = Router();
 
 router.get("/", (req, rep) => {
-    rep.render("back/index");
+    rep.render("back/index", {session : req.session});
 })
 
 
 router.get("/catalogue", async (req, rep) => {
     const produits = await Produit.find()
-    rep.render("back/catalogue/index" , {produits});
+    rep.render("back/catalogue/index" , {produits , session : req.session});
 })
 
 router.get("/catalogue/new", (req, rep) => {
@@ -40,7 +40,7 @@ router.get("/catalogue/update/:id", async (req, rep) => {
     if( !isValidObjectId(id) ) return rep.status(400).json({message : "id invalid"})
     const produit = await Produit.findById(id);
     if(!produit) return rep.status(404).json({message : "produit inconnu"});
-    rep.render("back/catalogue/form-update" , {produit , titre : "mettre à jour le produit"});
+    rep.render("back/catalogue/form-update" , {produit , titre : "mettre à jour le produit" , session : req.session});
 })
 
 router.post("/catalogue/update" , async (req, rep) => {

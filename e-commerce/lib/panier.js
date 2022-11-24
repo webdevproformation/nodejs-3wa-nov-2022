@@ -3,10 +3,10 @@ const { Produit } = require("../models/produits")
 module.exports = async (req) => {
     const panier = [];
     
-    const getProduit = async (item) => {
+    const getProduit = async (item) => {  
         const produitBdd =  await Produit.findById(item.id)
-        panier.push({...produitBdd._doc , ...item , total : item.quantite * produitBdd._doc.prix}) 
-    }
+        panier.push({...produitBdd._doc , ...item , total : item.quantite * produitBdd._doc.prix});
+    } 
 
     const panierComplet = req.session.panier.map( item => getProduit(item) )
     

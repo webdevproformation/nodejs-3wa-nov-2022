@@ -73,3 +73,10 @@ cas pratique :
 
 1 utiliser passport pour la gestion de l'authentification dans la page 
 2 http://localhost:5004/identification lorsque l'utilisateur dispose d'un compte créé précédemment
+
+
+{"cookie":{"originalMaxAge":86400000,"expires":"2022-11-25T15:16:48.552Z","httpOnly":true,"path":"/"},"passport":{"user":{"_id":"637e35807478cf6f747f9a02","email":"client2@yahoo.fr","password":"$2b$10$AEHluzC.9OEHuE/dwv0om.JVOnDEqdDvMYEBabi3SNGvX6LsijFtC","role":"client","dt_creation":"2022-11-23T15:00:16.870Z","__v":0}}}
+
+
+{"cookie":{"originalMaxAge":86400000,"expires":"2022-11-25T15:37:23.441Z","httpOnly":true,"path":"/"}}
+

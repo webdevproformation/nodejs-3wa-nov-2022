@@ -9,18 +9,12 @@ block contenu
         .col
             h2.text-center.mb-4 créer un profil client
             form(action="/add/user" method="POST")
-                .mb-3 
-                    input(type="email" class="form-control" name="email" placeholder="votre@email.fr") 
-                .mb-3
-                    input(type="password" class="form-control" name="password" placeholder="votre password")
+                include ../form
                 .mb-3.text-center
                     input(type="submit" class="btn btn-success")
         .col
             h2.text-center.mb-4 se connecter à un profil existant
-            form(action="/login" method="POST")
-                .mb-3 
-                    input(type="email" class="form-control" name="email" placeholder="votre@email.fr") 
-                .mb-3
-                    input(type="password" class="form-control" name="password" placeholder="votre password")
+            form(action="/connexion-tunnel" method="POST")
+                include ../form
                 .mb-3.text-center
                     input(type="submit" class="btn btn-info")
