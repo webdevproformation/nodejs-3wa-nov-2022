@@ -86,3 +86,7 @@ cas pratique :
 dans la page afficher la liste des utilisateurs 
 dans un tableau email / role / dt_creation / action 
                                                 supprimer ou modifier 
+
+
+cas pratique : 
+// mettre en place le delete et update des profils utilisateurs / 
