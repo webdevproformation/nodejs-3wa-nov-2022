@@ -1,4 +1,5 @@
 const express = require("express");
+const passport = require("passport");
 const PORT = 5004
 
 require("dotenv").config();
@@ -14,6 +15,9 @@ app.use(express.json())
 require("./config/pug")(app);
 require("./config/session")(app);
 require("./config/passport");
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 // routes
 app.use("/" , require("./routes/front"))

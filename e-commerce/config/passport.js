@@ -25,4 +25,16 @@ const strategy = new LocalStrategy( mapper , verification)
 
 passport.use(strategy);
 
+passport.serializeUser((user , done) =>{
+    done(null, user.id)
+})
+passport.deserializeUser(async(userId, done) => {
+    try{
+        const user = await User.findById(userId) ;
+        done(null, user)
+    }catch(ex){
+        done(ex)
+    }
+})
+
 // rdv 14h00 pour la suite et fin de la config de passport !!
