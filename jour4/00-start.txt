@@ -67,3 +67,9 @@ cas pratique
 
 
 {"cookie":{"originalMaxAge":86400000,"expires":"2022-11-25T14:34:51.021Z","httpOnly":true,"path":"/"},"panier":[{"id":"637cba7e26dd38e74a8ba727","quantite":1},{"id":"637ddc0eedb46d9866ad1ce5","quantite":1}]}
+
+
+cas pratique : 
+
+1 utiliser passport pour la gestion de l'authentification dans la page 
+2 http://localhost:5004/identification lorsque l'utilisateur dispose d'un compte créé précédemment
