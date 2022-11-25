@@ -23,7 +23,6 @@ router.delete("/user/:id", async(req, rep) => {
 
     if(!user) return rep.status(404).json({message : "aucun user trouvé"})
 
-
     // si l'utilisateur est un client de base => role === "client"
     // le supprimer ET supprimer toutes les commandes associées cet utilisateur
 
@@ -31,7 +30,7 @@ router.delete("/user/:id", async(req, rep) => {
         // rechercher tous les commandes réalisées par ce user 
         try{
             // supprimer le compte user 
-            await User.deleteOne({_id : user._id})
+            await User.deleteOne({ _id : user._id})
             // supprimer tous les commandes associées 
             await Commande.deleteMany({"client.email" : user.email})
             return rep.json({message : "ok"})
@@ -47,14 +46,13 @@ router.delete("/user/:id", async(req, rep) => {
        if(userAdmin.length > 1){
         if(id !== req.session.passport.user._id){
            // return rep.json({message : id}); 
-            await User.deleteOne({_id : user._id})
+            await User.deleteOne({ _id : user._id})
             await Commande.deleteMany({"client.email" : user.email})
             return rep.json({message : "ok"})
         }
         return rep.status(400).json({message : "un admin ne peut pas s'auto supprimé"})
        }
-        rep.status(400).json({message : "il doit resté au minimum un admin"})
-       
+        rep.status(400).json({message : "il doit resté au minimum un admin"})  
     }
 
 })

@@ -6,3 +6,11 @@ il faudra en + supprimer toutes les commandes qui lui sont associées
 => si vous supprimer un utilisateur et qu'il est admin => il faut obligatoirement qu'il reste au minimum un compte admin ET 
 un admin ne peut pas s'auto supprimé 
 
+
+---------------------
+
+créer la page du back office gestion des commandes 
+
+- tableau qui affiche 
+numéro de commande / nom du client / montant / ville / status / action 
+                                                                 update => changer le status de la commande 
