@@ -6,11 +6,11 @@ block title
 block contenu_back
     h1.mb-3 #{titre}
     form(method="POST" action="/admin/catalogue/update")
-        input(type="text" class="form-control mb-3" placeholder="nom produit" name="nom" value=`${commande.nom}`)
+        input(type="text" class="form-control mb-3" placeholder="nom produit" name="nom" value=`${produit.nom}`)
         .row.g-3
             input(type="hidden" value=`${produit._id}` name="id")
             .col 
-                input(type="text" class="form-control mb-3" placeholder="image" name="image" value=`${produit.image}`)
+                input(type="file" class="form-control mb-3" placeholder="image" name="image")
             .col 
                 input(type="number" class="form-control mb-3" placeholder="prix produit" name="prix" value=`${produit.prix}`)
             .col 

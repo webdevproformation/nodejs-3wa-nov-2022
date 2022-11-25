@@ -17,3 +17,5 @@ dans router.post("/catalogue/new" ,
 ------ 
 back.js 
 
+cas pratique 
+ajouter dans les profils clients la possibilité d'ajouter une image de profil 

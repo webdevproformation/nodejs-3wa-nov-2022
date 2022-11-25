@@ -10,7 +10,7 @@ block contenu
                 article.card    
                     h2.card-head.px-3 #{ produit.nom }
                     if produit.image 
-                        img(src=`${produit.image}`, alt="")
+                        img(src=`${produit.image}`, alt="" , class="miniature")
                     else 
                         img(src="https://via.placeholder.com/400x200?text=no image", alt="")
                     footer.card-footer.d-flex.justify-content-between.align-items-center
