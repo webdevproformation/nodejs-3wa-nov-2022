@@ -1,0 +1,28 @@
+extends ../index
+
+block title 
+    title gestion des commandes
+
+block contenu_back
+    h1 Gestion des commandes
+    .my-3 
+        a(href="/admin/commande/new" class="btn btn-outline-primary") créer nouvelle commande
+    table.table.table-striped.align-middle
+        thead 
+            tr  
+                th #id 
+                th email du client 
+                th montant
+                th ville 
+                th status
+                th action 
+        tbody 
+            for commande in commandes 
+                tr 
+                    td #{commande._id}
+                    td #{commande.client.email}
+                    td #{commande.total}
+                    td #{commande.livraison.ville}
+                    td ... 
+                    td 
+                        a(href=`/admin/commande/update/${commande._id}` class="btn btn-warning me-2 update") update 

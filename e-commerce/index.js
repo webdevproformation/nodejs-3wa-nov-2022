@@ -24,5 +24,6 @@ app.use("/" , require("./routes/front"))
 app.use("/" , require("./routes/authentification"));
 app.use("/admin" , require("./routes/back"))
 app.use("/admin" , require("./routes/back-users"))
+app.use("/admin" , require("./routes/back-commande"))
 
 app.listen( PORT , () => console.log(`express start on ${PORT}`) )

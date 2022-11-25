@@ -13,4 +13,6 @@ créer la page du back office gestion des commandes
 
 - tableau qui affiche 
 numéro de commande / nom du client / montant / ville / status / action 
-                                                                 update => changer le status de la commande 
+                                                                 update => changer le status de la commande
+
+bon café @ toute suite !! rdv 11h15 !!! 
