@@ -10,7 +10,7 @@ block contenu_back
         .row.g-3
             input(type="hidden" value=`${produit._id}` name="id")
             .col 
-                input(type="file" class="form-control mb-3" placeholder="image" name="image")
+                input(type="file" class="form-control mb-3" placeholder="image" name="image" multiple)
             .col 
                 input(type="number" class="form-control mb-3" placeholder="prix produit" name="prix" value=`${produit.prix}`)
             .col 

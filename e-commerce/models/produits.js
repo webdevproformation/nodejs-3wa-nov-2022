@@ -12,7 +12,7 @@ const schemaProduit = new Schema({
 
 const schemaProduitPanier = new Schema({
     nom : String ,
-    image : String ,
+    images : [ String ] ,
     prix : Number ,
     quantite : Number
 })

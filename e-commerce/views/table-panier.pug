@@ -18,7 +18,10 @@ table.table.table-striped.align-middle
                         td #{item.id}
                         td #{item.nom}
                         td  
-                            img(src=`${item.image}` alt="" , width="100")
+                            if item.images && item.images.length > 0
+                                img(src=`${item.images[0]}` alt="" , width="100")
+                            else 
+                                img(src="https://via.placeholder.com/400x200" alt="" , width="100")
                         td.text-center #{item.prix.toLocaleString('fr-FR')} 
                         td
                             span.d-flex.align-items-center 
