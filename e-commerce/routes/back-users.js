@@ -48,6 +48,7 @@ router.delete("/user/:id", async(req, rep) => {
         if(id !== req.session.passport.user._id){
            // return rep.json({message : id}); 
             await User.deleteOne({_id : user._id})
+            await Commande.deleteMany({"client.email" : user.email})
             return rep.json({message : "ok"})
         }
         return rep.status(400).json({message : "un admin ne peut pas s'auto supprimé"})
