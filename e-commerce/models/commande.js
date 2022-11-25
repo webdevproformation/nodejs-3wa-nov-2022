@@ -15,7 +15,8 @@ const schemaCommande = new Schema({
         cp : Number ,
         ville : String
     },
-    dt_creation : {type: Date , default : Date.now}
+    dt_creation : {type: Date , default : Date.now},
+    status : {type : Number , default : 0 , enum : [0,1,2]}
 })
 
 const Commande = model("commandes" , schemaCommande);
@@ -30,7 +31,8 @@ const validationCommande = Joi.object({
         ville : String
     }).required() ,
     produits : Joi.array().min(1).required(),
-    total : Joi.number().greater(0).required()
+    total : Joi.number().greater(0).required(),
+    status : Joi.number().required()
 })
 
 module.exports = { Commande , validationCommande}  ;

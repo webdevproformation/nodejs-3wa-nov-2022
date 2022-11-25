@@ -146,7 +146,8 @@ router.get("/paiement" , async(req, rep) => {
         },
         produits : panier ,
         livraison : req.session.livraison,
-        total : total
+        total   ,
+        status : 0
     }
     const {error} = validationCommande.validate(maCommande, {abortEarly:false});
 

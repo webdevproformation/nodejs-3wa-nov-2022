@@ -23,6 +23,15 @@ block contenu_back
                     td #{commande.client.email}
                     td #{commande.total}
                     td #{commande.livraison.ville}
-                    td ... 
+                    td 
+                        if commande.status === 0
+                            span.badge.bg-warning à traiter 
+                        else if commande.status === 1
+                            span.badge.bg-info à livrer
+                        else if commande.status === 2
+                            span.badge.bg-success finalisé
+                        else 
+                            span.badge.bg-dark.text-white N/A
+
                     td 
                         a(href=`/admin/commande/update/${commande._id}` class="btn btn-warning me-2 update") update 
