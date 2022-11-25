@@ -1,0 +1,8 @@
+delete 
+
+sur la page de gestion des clients 
+=> si vous supprimez un utilisateur => en + de supprimer son entrée dans la base de données 
+il faudra en + supprimer toutes les commandes qui lui sont associées 
+=> si vous supprimer un utilisateur et qu'il est admin => il faut obligatoirement qu'il reste au minimum un compte admin ET 
+un admin ne peut pas s'auto supprimé 
+
