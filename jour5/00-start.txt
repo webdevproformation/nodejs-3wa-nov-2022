@@ -16,3 +16,18 @@ numéro de commande / nom du client / montant / ville / status / action
                                                                  update => changer le status de la commande
 
 bon café @ toute suite !! rdv 11h15 !!! 
+
+
+cas pratique 
+modifier le model de la commande => 
+ajouter une nouvelle colonne => status (dans la base de données pour chaque future commande)
+par défaut => "à traiter" 0
+           => "à livrer"  1
+           => "finalisé"  2
+
+2 lorsque d'une commande est réalisée dans le front ajouté la propriété status avec la valeur 0 
+
+3 ajouter l'opération d'update dans le back office => faire en sorte que réalisez l'update => vous pouvez changer le status 
+
+
+
