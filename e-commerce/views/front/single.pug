@@ -6,7 +6,14 @@ block title
 block contenu 
     .row 
         .col-4 
-            img(src=`${produit.image}`, alt="" , class="img-fluid")
+            if produit.images
+                for image , i in produit.images
+                    if i === 0
+                        img(src=`${image}`, alt="" , class="img-fluid")
+                    else 
+                        img(src=`${image}`, alt="" , class="miniature-single")
+            else 
+                img(src="https://via.placeholder.com/400x200", alt="" , class="img-fluid")
         .col-8 
             header.d-flex.justify-content-between.align-items-baseline.mb-3
                 h1 #{produit.nom}

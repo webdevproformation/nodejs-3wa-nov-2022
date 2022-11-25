@@ -3,3 +3,16 @@
     height: 150px;
     object-fit: cover;
 }
+
+.miniature-single{
+    margin-top: 20px;
+    width: calc(50% - 7px);
+    height: 100px;
+    object-fit: cover;
+}
+.miniature-single:nth-child(2){
+    margin-right: 7px;
+}
+.miniature-single:nth-child(3){
+    margin-left: 7px;
+}

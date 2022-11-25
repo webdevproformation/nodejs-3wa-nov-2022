@@ -22,7 +22,10 @@ block contenu_back
                     td #{produit._id}
                     td #{produit.nom}
                     td 
-                        img(src=`${produit.image}`, alt="" width="100")
+                        if(produit.images)
+                            img(src=`${produit.images[0]}`, alt="" width="100")
+                        else 
+                            img(src="https://via.placeholder.com/400x200", alt="" width="100")
                     td #{produit.prix}
                     td 
                         if produit.en_stock
