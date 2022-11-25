@@ -49,7 +49,6 @@ router.post("/catalogue/update" , upload.single("image") , async (req, rep) => {
     req.body.en_stock = req.body.en_stock === "1" ? true : false ;
     req.body.image = req.fileName ;
 
-    return rep.json({data : req.fileName})
     if( !isValidObjectId(req.body.id) ) return rep.status(400).json({message : "id invalid"})
     const produit = await Produit.findById(req.body.id);
     if(!produit) return rep.status(404).json({message : "produit inconnu"});
