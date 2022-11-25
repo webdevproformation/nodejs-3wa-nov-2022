@@ -8,7 +8,7 @@ module.exports = async (req) => {
         panier.push({...produitBdd._doc , ...item , total : item.quantite * produitBdd._doc.prix});
     } 
 
-    const panierComplet = req.session.panier.map( item => getProduit(item) )
+    const panierComplet = req.session.panier ?   req.session.panier.map( item => getProduit(item) ) : [] ; 
     
     await Promise.all(panierComplet); // attendre que plusieurs requête async soient exécutées pour passer à la suite 
     // Promise.all([ promise , promise ])
