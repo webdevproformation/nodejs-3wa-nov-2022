@@ -1,6 +1,7 @@
 const {Router} = require("express")
 const { Produit , validationProduit } = require("../models/produits");
 const {isValidObjectId} = require("mongoose");
+const upload = require("../middleware/multer")
 
 const router = Router();
 
@@ -18,9 +19,10 @@ router.get("/catalogue/new", (req, rep) => {
     rep.render("back/catalogue/form",{titre : "créer un nouveau produit", session : req.session});
 })
 
-router.post("/catalogue/new", async (req, rep) => {
+router.post("/catalogue/new", upload.single("image")  ,  async (req, rep) => {
 
     req.body.en_stock = req.body.en_stock === "1" ? true : false ;
+    req.body.image = req.fileName ;
 
     const {error} = validationProduit.validate(req.body)
 

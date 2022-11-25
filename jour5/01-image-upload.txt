@@ -1,0 +1,19 @@
+modifier le champ input <type="text" name="image">
+                        <type="file" name="image">
+
+dans la balise form => enctype="multipart/form-data"
+
+installer une nouveau module => multer 
+
+npm i multer
+
+routes/back.js
+
+const upload = multer({dest : "public/uploads"})
+
+dans router.post("/catalogue/new" , 
+
+
+------ 
+back.js 
+
