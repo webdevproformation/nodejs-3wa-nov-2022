@@ -26,5 +26,19 @@ router.get("/commande/update/:id" ,  async (req, rep) => {
     }  
 })
 
+router.post("/commande/update", async (req, rep) => {
+    const {id , status} =  req.body ;
+    if( ! isValidObjectId(id)) return rep.status(400).json({message : "id commande invalide"})
+    try{
+        const commande = await Commande.findById(id)
+        commande.status = parseInt(status);
+        await commande.save()
+        rep.redirect("/admin/commande");
+    }catch(ex){
+        rep.status(500).json({message : "impossible d'update la commande "})
+    }  
+
+})
+
 
 module.exports = router ;

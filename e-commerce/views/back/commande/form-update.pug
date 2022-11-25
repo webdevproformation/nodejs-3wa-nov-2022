@@ -10,7 +10,7 @@ block contenu_back
         h2 client
         .row 
             .col-9
-                input(type="text" class="form-control mb-3" placeholder="nom client" name="email" value=`${commande.client.email}`)
+                input(type="text" class="form-control mb-3" placeholder="nom client" name="email" value=`${commande.client.email}` disabled)
             .col 
                 select(name="status" class="form-select") 
                     if commande.status === 0  
@@ -30,14 +30,14 @@ block contenu_back
         h2 adresse de livraison
         .row.g-3
             .col 
-                input(type="text" class="form-control mb-3" placeholder="image" name="rue" value=`${commande.livraison.rue}`)
+                input(type="text" class="form-control mb-3" placeholder="image" name="rue" value=`${commande.livraison.rue}` disabled)
             .col 
-                input(type="number" class="form-control mb-3" placeholder="code postal" name="cp" value=`${commande.livraison.cp}`)
+                input(type="number" class="form-control mb-3" placeholder="code postal" name="cp" value=`${commande.livraison.cp}` disabled)
             .col 
-                input(type="string" class="form-control mb-3" placeholder="ville" name="ville" value=`${commande.livraison.ville}`)
+                input(type="string" class="form-control mb-3" placeholder="ville" name="ville" value=`${commande.livraison.ville}` disabled)
         h2 le detail de la commande 
         - panier = commande.produits
         include ../../table-panier
        
         .d-flex.justify-content-end
-            input(type="submit" class="btn btn-outline-success")
+            input(type="submit" class="btn btn-outline-success" value="mettre à jour")
