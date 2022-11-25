@@ -5,7 +5,7 @@ const {isValidObjectId} = require("mongoose");
 const router = Router();
 
 router.get("/", (req, rep) => {
-    rep.render("back/index", {session : req.session});
+    rep.render("back/home", {session : req.session});
 })
 
 

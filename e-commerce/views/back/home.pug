@@ -1,0 +1,30 @@
+extends ../layout
+
+block title 
+    title back office
+
+block contenu 
+    .row
+        .col-2
+            include sidebar
+        .col-10
+            h1 Bienvenu dans la back office
+            table.table.table-striped 
+                thead 
+                    tr 
+                        th produits 
+                        th client 
+                        th commande 
+                tbody 
+                    tr 
+                        td ....
+                        td ....
+                        td ....
+                    tr 
+                        td 
+                            a(href="/admin/catalogue" class="btn btn-dark") accéder
+                        td 
+                            a(href="/admin/user" class="btn btn-primary") accéder
+                        td 
+                            a(href="/admin/commande" class="btn btn-info") accéder
+                        
