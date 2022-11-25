@@ -27,8 +27,8 @@ table.table.table-striped.align-middle
                                 button.btn.btn-primary.btn-sm.plus(data-id=`${item.id}`) +
                         td 
                             button.btn.btn-danger.btn-sm.delete(data-id=`${item.id}`) supprimer 
-                        td.text-end #{item.total.toLocaleString('fr-FR')} 
+                        td.text-end #{(item.quantite * item.prix) .toLocaleString('fr-FR')} 
             tfoot 
                 tr 
                     td(colspan="6" class="text-end") total panier 
-                    td.text-end #{total.toLocaleString('fr-FR')}
+                    td.text-end #{total}

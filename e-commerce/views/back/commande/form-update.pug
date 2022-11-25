@@ -1,0 +1,43 @@
+extends ../index
+
+block title 
+    title #{titre}
+
+block contenu_back
+    h1.mb-3 #{titre}
+    form(method="POST" action="/admin/catalogue/update")
+        input(type="hidden" value=`${commande._id}` name="id")
+        h2 client
+        .row 
+            .col-9
+                input(type="text" class="form-control mb-3" placeholder="nom client" name="email" value=`${commande.client.email}`)
+            .col 
+                select(name="status" class="form-select") 
+                    if commande.status === 0  
+                        option(value="0"  selected) à traiter 
+                    else  
+                        option(value="0") à traiter
+                    
+                    if commande.status === 1   
+                        option(value="1" selected) à livrer 
+                    else 
+                        option(value="1" ) à livrer 
+                    
+                    if commande.status === 2  
+                        option(value="2" selected) finalisé 
+                    else    
+                        option(value="2" ) finalisé 
+        h2 adresse de livraison
+        .row.g-3
+            .col 
+                input(type="text" class="form-control mb-3" placeholder="image" name="rue" value=`${commande.livraison.rue}`)
+            .col 
+                input(type="number" class="form-control mb-3" placeholder="code postal" name="cp" value=`${commande.livraison.cp}`)
+            .col 
+                input(type="string" class="form-control mb-3" placeholder="ville" name="ville" value=`${commande.livraison.ville}`)
+        h2 le detail de la commande 
+        - panier = commande.produits
+        include ../../table-panier
+       
+        .d-flex.justify-content-end
+            input(type="submit" class="btn btn-outline-success")
