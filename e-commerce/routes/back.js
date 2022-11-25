@@ -47,11 +47,18 @@ router.get("/catalogue/update/:id", async (req, rep) => {
 
 router.post("/catalogue/update" , upload.single("image") , async (req, rep) => {
     req.body.en_stock = req.body.en_stock === "1" ? true : false ;
-    req.body.image = req.fileName ;
 
     if( !isValidObjectId(req.body.id) ) return rep.status(400).json({message : "id invalid"})
     const produit = await Produit.findById(req.body.id);
     if(!produit) return rep.status(404).json({message : "produit inconnu"});
+
+    if(req.fileName){
+        req.body.image = req.fileName ;
+    }else {
+        // return rep.json( { produit : produit.image});
+        req.body.image = produit.image
+        
+    }
 
     delete req.body.id ;
 
@@ -61,7 +68,7 @@ router.post("/catalogue/update" , upload.single("image") , async (req, rep) => {
     produit.prix = req.body.prix
     produit.description = req.body.description
     produit.en_stock = req.body.en_stock
-    produit.image = req.fileName; 
+    produit.image = req.body.image ; 
     await produit.save();
     rep.redirect("/admin/catalogue"); 
 
