@@ -15,6 +15,7 @@ block contenu
                 th nombre de produit
                 th montant commande 
                 th date commande 
+                th status
                 th action 
         tbody 
             for commande in commandes
@@ -23,5 +24,14 @@ block contenu
                     td #{commande.produits.length} 
                     td #{commande.total}
                     td #{ new Intl.DateTimeFormat('fr-Fr').format(commande.dt_creation)  }
-                    th 
+                    td
+                        if commande.status === 0
+                            span.badge.bg-warning à traiter 
+                        else if commande.status === 1
+                            span.badge.bg-info à livrer
+                        else if commande.status === 2
+                            span.badge.bg-success finalisé
+                        else 
+                            span.badge.bg-dark.text-white N/A
+                    td
                         a(href="/profil/detail/commande" class="btn btn-outline-dark btn-sm") voir le détail   

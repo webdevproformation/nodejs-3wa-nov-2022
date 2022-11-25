@@ -34,10 +34,11 @@ cas pratique :
 
 gérer la mise à jour d'une commande => la partie status => le changement de status 
 
+----------------------
+
 cas pratique :
 
 ajouter le status de la commande dans le tableau de synthèse des commandes dans le profil utilisateur (où la liste des commandes sont affichées )
 
-une fois
 
 
