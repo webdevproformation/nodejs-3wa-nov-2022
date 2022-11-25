@@ -30,4 +30,9 @@ par défaut => "à traiter" 0
 3 ajouter l'opération d'update dans le back office => faire en sorte que réalisez l'update => vous pouvez changer le status 
 
 
+cas pratique :
+
+gérer la mise à jour d'une commande => la partie status => le changement de status 
+
+
 

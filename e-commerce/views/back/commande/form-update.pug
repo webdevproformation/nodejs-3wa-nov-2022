@@ -5,7 +5,7 @@ block title
 
 block contenu_back
     h1.mb-3 #{titre}
-    form(method="POST" action="/admin/catalogue/update")
+    form(method="POST" action="/admin/commande/update")
         input(type="hidden" value=`${commande._id}` name="id")
         h2 client
         .row 
