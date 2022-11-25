@@ -8,8 +8,10 @@ block contenu
     .row
         .col
             h2.text-center.mb-4 créer un profil client
-            form(action="/add/user" method="POST")
+            form(action="/add/user" method="POST" enctype="multipart/form-data")
                 include ../form
+                .mb-3
+                    input(type="file" class="form-control" placeholder="image" name="image")
                 .mb-3.text-center
                     input(type="submit" class="btn btn-success")
         .col

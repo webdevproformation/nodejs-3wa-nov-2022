@@ -12,6 +12,7 @@ block contenu_back
             tr  
                 th #id 
                 th email 
+                th image
                 th role
                 th dt creation 
                 th action 
@@ -20,6 +21,8 @@ block contenu_back
                 tr 
                     td #{user._id}
                     td #{user.email}
+                    td 
+                        img(src=`${user.image}`, alt="" , class="rounded-circle" , style="width:50px; height:50px; object-fit:cover")
                     td 
                         if user.role === "admin"
                             span.badge.bg-info #{user.role} 

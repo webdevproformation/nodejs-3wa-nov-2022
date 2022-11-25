@@ -6,6 +6,8 @@ const bcrypt = require("bcrypt")
 const getPanier = require("../lib/panier");
 const livraisonValidation = require("../models/livraison")
 const {Commande , validationCommande} = require("../models/commande") 
+const upload = require("../middleware/multer")
+
 
 const router = Router();
 
@@ -93,7 +95,7 @@ router.get("/identification" , (req, rep) => {
     rep.render("front/identification" , {session : req.session})
 })
 
-router.post("/add/user" , async (req, rep) => {
+router.post("/add/user" ,  upload.single("image")  , async (req, rep) => {
 
     // verifier que l'utilisateur a rempli le formulaire de manière conforme
     const {error} = userValidation.validate(req.body)
@@ -111,7 +113,8 @@ router.post("/add/user" , async (req, rep) => {
     const user = new User({
         email : req.body.email ,
         password : passwordHashed,
-        role : "client"
+        role : "client",
+        image : req.fileName && req.fileName 
     })
     const result = await user.save();
     req.session.passport =  { user : result }  ;
